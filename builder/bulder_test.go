@@ -17,7 +17,10 @@ type testRetriever struct{}
 
 func (t *testRetriever) get(url string) ([]byte, error) {
 	filename := fmt.Sprintf("test/%v", strings.Replace(
-		strings.Replace(url, ":", "_", -1),
+		strings.Replace(
+			strings.Replace(
+				url, "?", "_", -1),
+			":", "_", -1),
 		"/", "_", -1))
 	return ioutil.ReadFile(filename)
 }
@@ -32,5 +35,9 @@ func TestGetReleases(t *testing.T) {
 
 	if len(releases) == 0 {
 		t.Errorf("No releases returned: %v, %v", releases, err)
+	}
+
+	if len(releases) <= 50 {
+		t.Errorf("Pagination has failed: %v", len(releases))
 	}
 }
