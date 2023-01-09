@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package damp;
+
+option go_package = "github.com/brotherlogic/damp/proto";
+
+message Release {
+    int32 id = 1;
+}
