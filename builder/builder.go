@@ -22,8 +22,17 @@ type Bridge struct {
 }
 
 func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
-	_, _, err := b.pullReleases(artist, 1)
-	return nil, err
+	releases, _, err := b.pullReleases(artist, 1)
+
+	var pr []*drtppb.Release
+	for _, release := range releases {
+		pr = append(pr,
+			&drtppb.Release{
+				Id: int32(release.Id),
+			})
+	}
+
+	return pr, err
 }
 
 type ReleaseReturn struct {
@@ -32,13 +41,13 @@ type ReleaseReturn struct {
 }
 
 type Pagination struct {
-	perPage int
-	items   int
-	pages   int
+	PerPage int `json:"per_page"`
+	Items   int
+	Pages   int
 }
 
 type ReleasePageData struct {
-	id int
+	Id int
 }
 
 func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
