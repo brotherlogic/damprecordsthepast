@@ -5,6 +5,8 @@ package builder
 import (
 	"encoding/json"
 	"fmt"
+
+	drtppb "github.com/brotherlogic/damprecordsthepast/proto"
 )
 
 type retriever interface {
@@ -19,7 +21,7 @@ type Bridge struct {
 	r retriever
 }
 
-func (b *Bridge) GetReleases(artist int32) {
+func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 	b.pullReleases(artist, 1)
 }
 
