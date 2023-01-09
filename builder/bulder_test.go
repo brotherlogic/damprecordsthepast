@@ -16,7 +16,8 @@ func GetTestBridge() *Bridge {
 type testRetriever struct{}
 
 func (t *testRetriever) get(url string) ([]byte, error) {
-	filename := fmt.Sprintf("test/%v", strings.Replace(url,
+	filename := fmt.Sprintf("test/%v", strings.Replace(
+		strings.Replace(url, ":", "_", -1),
 		"/", "_", -1))
 	return ioutil.ReadFile(filename)
 }

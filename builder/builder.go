@@ -49,7 +49,7 @@ func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData,
 		return nil, nil, err
 	}
 
-	var ret *ReleaseReturn
+	ret := &ReleaseReturn{}
 	err = json.Unmarshal(res, ret)
 	if err != nil {
 		return nil, nil, err
