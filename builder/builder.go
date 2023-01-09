@@ -5,6 +5,9 @@ package builder
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"time"
 
 	drtppb "github.com/brotherlogic/damprecordsthepast/proto"
 )
@@ -17,8 +20,32 @@ var (
 	urlBase = "https://api.discogs.com/"
 )
 
+func GetBridge() *Bridge {
+	return &Bridge{r: &ProdRetriever{}}
+}
+
 type Bridge struct {
 	r retriever
+}
+
+type ProdRetriever struct{}
+
+func (p *ProdRetriever) get(url string) ([]byte, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return []byte{}, err
+	}
+
+	if resp.StatusCode != 200 {
+		if resp.StatusCode == 429 {
+			time.Sleep(time.Second * 10)
+			return p.get(url)
+		}
+		return []byte{}, fmt.Errorf("non-200 response: %v -> %v", resp.StatusCode, resp.Status)
+	}
+
+	defer resp.Body.Close()
+	return ioutil.ReadAll(resp.Body)
 }
 
 func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
