@@ -40,4 +40,15 @@ func TestGetReleases(t *testing.T) {
 	if len(releases) <= 50 {
 		t.Errorf("Pagination has failed: %v", len(releases))
 	}
+
+	foundNIN := false
+	for _, release := range releases {
+		if release.Id == 5241 {
+			foundNIN = true
+		}
+	}
+
+	if foundNIN {
+		t.Errorf("We've found Nine Inch Nails in the mix")
+	}
 }
