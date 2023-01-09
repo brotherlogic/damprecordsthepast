@@ -24,5 +24,12 @@ func (t *testRetriever) get(url string) ([]byte, error) {
 func TestGetReleases(t *testing.T) {
 	b := GetTestBridge()
 
-	b.GetReleases(2228)
+	releases, err := b.GetReleases(2228)
+	if err != nil {
+		t.Fatalf("Error in get releases: %v", err)
+	}
+
+	if len(releases) == 0 {
+		t.Errorf("No releases returned: %v, %v", releases, err)
+	}
 }

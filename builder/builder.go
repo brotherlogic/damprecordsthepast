@@ -22,7 +22,8 @@ type Bridge struct {
 }
 
 func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
-	b.pullReleases(artist, 1)
+	_, _, err := b.pullReleases(artist, 1)
+	return nil, err
 }
 
 type ReleaseReturn struct {
