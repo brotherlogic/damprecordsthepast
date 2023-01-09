@@ -22,7 +22,10 @@ type Bridge struct {
 }
 
 func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
-	releases, _, err := b.pullReleases(artist, 1)
+	releases, pagination, err := b.pullReleases(artist, 1)
+	if err != nil {
+		return nil, err
+	}
 
 	var pr []*drtppb.Release
 	for _, release := range releases {
@@ -30,6 +33,20 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 			&drtppb.Release{
 				Id: int32(release.Id),
 			})
+	}
+
+	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
+		releases, _, err := b.pullReleases(artist, pageNumber)
+		if err != nil {
+			return nil, err
+		}
+
+		for _, release := range releases {
+			pr = append(pr,
+				&drtppb.Release{
+					Id: int32(release.Id),
+				})
+		}
 	}
 
 	return pr, err
@@ -51,7 +68,7 @@ type ReleasePageData struct {
 }
 
 func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
-	url := fmt.Sprintf("%vartists/%v/releases", urlBase, artist)
+	url := fmt.Sprintf("%vartists/%v/releases?page=%v", urlBase, artist, pageNumber)
 
 	res, err := b.r.get(url)
 	if err != nil {
