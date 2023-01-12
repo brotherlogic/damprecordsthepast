@@ -63,7 +63,7 @@ func (b *Bridge) getSubReleases(artist int32) ([]*drtppb.Release, error) {
 	}
 
 	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
-		releases, _, err := b.pullReleases(artist, pageNumber)
+		releases, _, err := b.pullSubReleases(artist, pageNumber)
 		if err != nil {
 			return nil, err
 		}

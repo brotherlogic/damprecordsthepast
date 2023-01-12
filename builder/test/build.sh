@@ -1,4 +1,7 @@
 #!/usr/bin/zsh
+curl -s "https://api.discogs.com/masters/25288/versions?page=2" -o "https___api.discogs.com_masters_25288_versions_page=2"
+exit
+
 for i in {1..16}
 do
     echo "Downloading $i"
