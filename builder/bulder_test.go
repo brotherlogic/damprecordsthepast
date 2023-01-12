@@ -3,6 +3,7 @@ package builder
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"strings"
 	"testing"
 )
@@ -15,14 +16,35 @@ func GetTestBridge() *Bridge {
 
 type testRetriever struct{}
 
-func (t *testRetriever) get(url string) ([]byte, error) {
-	filename := fmt.Sprintf("test/%v", strings.Replace(
+func clean(s string) string {
+	return strings.Replace(
 		strings.Replace(
 			strings.Replace(
-				url, "?", "_", -1),
+				s, "?", "_", -1),
 			":", "_", -1),
-		"/", "_", -1))
-	return ioutil.ReadFile(filename)
+		"/", "_", -1)
+}
+
+func (t *testRetriever) get(url string) ([]byte, error) {
+	log.Printf("Getting %v", url)
+	filename := fmt.Sprintf("test/%v", clean(url))
+	b, err := ioutil.ReadFile(filename)
+	if err != nil {
+		if strings.Contains(url, "master") {
+			fmt.Printf("curl -s \"%v\" -o \"%v\"\nsleep 10\n", url, clean(url))
+			str := `{"pagination": {
+				"per_page": 50,
+				"items": 4,
+				"page": 1,
+				"urls": {},
+				"pages": 1
+			  }
+			  }`
+			return []byte(str), nil
+		}
+	}
+
+	return b, err
 }
 
 func TestGetReleases(t *testing.T) {
@@ -39,5 +61,16 @@ func TestGetReleases(t *testing.T) {
 
 	if len(releases) <= 50 {
 		t.Errorf("Pagination has failed: %v", len(releases))
+	}
+
+	foundNIN := false
+	for _, release := range releases {
+		if release.Id == 5241 {
+			foundNIN = true
+		}
+	}
+
+	if foundNIN {
+		t.Errorf("We've found Nine Inch Nails in the mix")
 	}
 }

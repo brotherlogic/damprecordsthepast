@@ -48,8 +48,8 @@ func (p *ProdRetriever) get(url string) ([]byte, error) {
 	return ioutil.ReadAll(resp.Body)
 }
 
-func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
-	releases, pagination, err := b.pullReleases(artist, 1)
+func (b *Bridge) getSubReleases(artist int32) ([]*drtppb.Release, error) {
+	releases, pagination, err := b.pullSubReleases(artist, 1)
 	if err != nil {
 		return nil, err
 	}
@@ -61,9 +61,8 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 				Id: int32(release.Id),
 			})
 	}
-
 	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
-		releases, _, err := b.pullReleases(artist, pageNumber)
+		releases, _, err := b.pullSubReleases(artist, pageNumber)
 		if err != nil {
 			return nil, err
 		}
@@ -79,9 +78,61 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 	return pr, err
 }
 
+func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
+	releases, pagination, err := b.pullReleases(artist, 1)
+	if err != nil {
+		return nil, err
+	}
+
+	var pr []*drtppb.Release
+	for _, release := range releases {
+		if release.MainRelease > 0 {
+			subreleases, err := b.getSubReleases(int32(release.Id))
+			if err != nil {
+				return nil, err
+			}
+			pr = append(pr, subreleases...)
+		} else {
+			pr = append(pr,
+				&drtppb.Release{
+					Id: int32(release.Id),
+				})
+		}
+	}
+
+	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
+		releases, _, err := b.pullReleases(artist, pageNumber)
+		if err != nil {
+			return nil, err
+		}
+
+		for _, release := range releases {
+			if release.MainRelease > 0 {
+				subreleases, err := b.getSubReleases(int32(release.Id))
+				if err != nil {
+					return nil, err
+				}
+				pr = append(pr, subreleases...)
+			} else {
+				pr = append(pr,
+					&drtppb.Release{
+						Id: int32(release.Id),
+					})
+			}
+		}
+	}
+
+	return pr, err
+}
+
 type ReleaseReturn struct {
 	Pagination *Pagination
 	Releases   []*ReleasePageData
+}
+
+type SubReleaseReturn struct {
+	Pagination *Pagination
+	Versions   []*ReleasePageData
 }
 
 type Pagination struct {
@@ -91,7 +142,8 @@ type Pagination struct {
 }
 
 type ReleasePageData struct {
-	Id int
+	Id          int
+	MainRelease int `json:"main_release"`
 }
 
 func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
@@ -109,4 +161,21 @@ func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData,
 	}
 
 	return ret.Releases, ret.Pagination, nil
+}
+
+func (b *Bridge) pullSubReleases(release int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
+	url := fmt.Sprintf("%vmasters/%v/versions?page=%v", urlBase, release, pageNumber)
+
+	res, err := b.r.get(url)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	ret := &SubReleaseReturn{}
+	err = json.Unmarshal(res, ret)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return ret.Versions, ret.Pagination, nil
 }
