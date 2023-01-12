@@ -1,7 +1,4 @@
 #!/usr/bin/zsh
-curl -s "https://api.discogs.com/masters/25288/versions?page=2" -o "https___api.discogs.com_masters_25288_versions_page=2"
-exit
-
 for i in {1..16}
 do
     echo "Downloading $i"
@@ -9,504 +6,507 @@ do
     curl -s "https://api.discogs.com/artists/2228/releases?page=$i" -o "https___api.discogs.com_artists_2228_releases_page=$i"
 done
 
-curl -s "https://api.discogs.com/masters/39019/versions?page=1" -o "https___api.discogs.com_masters_39019_versions_page=1"
+
+curl -s "https://api.discogs.com/masters/571580/versions?page=1" -o "https___api.discogs.com_masters_571580_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39183/versions?page=1" -o "https___api.discogs.com_masters_39183_versions_page=1"
+curl -s "https://api.discogs.com/masters/29312/versions?page=1" -o "https___api.discogs.com_masters_29312_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/264539/versions?page=1" -o "https___api.discogs.com_masters_264539_versions_page=1"
+curl -s "https://api.discogs.com/masters/1139375/versions?page=1" -o "https___api.discogs.com_masters_1139375_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98829/versions?page=1" -o "https___api.discogs.com_masters_98829_versions_page=1"
+curl -s "https://api.discogs.com/masters/1727686/versions?page=1" -o "https___api.discogs.com_masters_1727686_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38928/versions?page=1" -o "https___api.discogs.com_masters_38928_versions_page=1"
+curl -s "https://api.discogs.com/masters/1193530/versions?page=1" -o "https___api.discogs.com_masters_1193530_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38932/versions?page=1" -o "https___api.discogs.com_masters_38932_versions_page=1"
+curl -s "https://api.discogs.com/masters/8766/versions?page=1" -o "https___api.discogs.com_masters_8766_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38969/versions?page=1" -o "https___api.discogs.com_masters_38969_versions_page=1"
+curl -s "https://api.discogs.com/masters/2002214/versions?page=1" -o "https___api.discogs.com_masters_2002214_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39119/versions?page=1" -o "https___api.discogs.com_masters_39119_versions_page=1"
+curl -s "https://api.discogs.com/masters/1470028/versions?page=1" -o "https___api.discogs.com_masters_1470028_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39201/versions?page=1" -o "https___api.discogs.com_masters_39201_versions_page=1"
+curl -s "https://api.discogs.com/masters/611314/versions?page=1" -o "https___api.discogs.com_masters_611314_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1173476/versions?page=1" -o "https___api.discogs.com_masters_1173476_versions_page=1"
+curl -s "https://api.discogs.com/masters/2285864/versions?page=1" -o "https___api.discogs.com_masters_2285864_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39034/versions?page=1" -o "https___api.discogs.com_masters_39034_versions_page=1"
+curl -s "https://api.discogs.com/masters/373439/versions?page=1" -o "https___api.discogs.com_masters_373439_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1141502/versions?page=1" -o "https___api.discogs.com_masters_1141502_versions_page=1"
+curl -s "https://api.discogs.com/masters/9752393/versions?page=1" -o "https___api.discogs.com_masters_9752393_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38960/versions?page=1" -o "https___api.discogs.com_masters_38960_versions_page=1"
+curl -s "https://api.discogs.com/masters/469436/versions?page=1" -o "https___api.discogs.com_masters_469436_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98868/versions?page=1" -o "https___api.discogs.com_masters_98868_versions_page=1"
+curl -s "https://api.discogs.com/masters/8813/versions?page=1" -o "https___api.discogs.com_masters_8813_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39067/versions?page=1" -o "https___api.discogs.com_masters_39067_versions_page=1"
+curl -s "https://api.discogs.com/masters/1535907/versions?page=1" -o "https___api.discogs.com_masters_1535907_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98791/versions?page=1" -o "https___api.discogs.com_masters_98791_versions_page=1"
+curl -s "https://api.discogs.com/masters/552924/versions?page=1" -o "https___api.discogs.com_masters_552924_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39039/versions?page=1" -o "https___api.discogs.com_masters_39039_versions_page=1"
+curl -s "https://api.discogs.com/masters/469738/versions?page=1" -o "https___api.discogs.com_masters_469738_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39079/versions?page=1" -o "https___api.discogs.com_masters_39079_versions_page=1"
+curl -s "https://api.discogs.com/masters/496963/versions?page=1" -o "https___api.discogs.com_masters_496963_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/187054/versions?page=1" -o "https___api.discogs.com_masters_187054_versions_page=1"
+curl -s "https://api.discogs.com/masters/1233494/versions?page=1" -o "https___api.discogs.com_masters_1233494_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39196/versions?page=1" -o "https___api.discogs.com_masters_39196_versions_page=1"
+curl -s "https://api.discogs.com/masters/691370/versions?page=1" -o "https___api.discogs.com_masters_691370_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39220/versions?page=1" -o "https___api.discogs.com_masters_39220_versions_page=1"
+curl -s "https://api.discogs.com/masters/590362/versions?page=1" -o "https___api.discogs.com_masters_590362_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38926/versions?page=1" -o "https___api.discogs.com_masters_38926_versions_page=1"
+curl -s "https://api.discogs.com/masters/379574/versions?page=1" -o "https___api.discogs.com_masters_379574_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39006/versions?page=1" -o "https___api.discogs.com_masters_39006_versions_page=1"
+curl -s "https://api.discogs.com/masters/1929402/versions?page=1" -o "https___api.discogs.com_masters_1929402_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38954/versions?page=1" -o "https___api.discogs.com_masters_38954_versions_page=1"
+curl -s "https://api.discogs.com/masters/373434/versions?page=1" -o "https___api.discogs.com_masters_373434_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39207/versions?page=1" -o "https___api.discogs.com_masters_39207_versions_page=1"
+curl -s "https://api.discogs.com/masters/8774/versions?page=1" -o "https___api.discogs.com_masters_8774_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/278071/versions?page=1" -o "https___api.discogs.com_masters_278071_versions_page=1"
+curl -s "https://api.discogs.com/masters/8753/versions?page=1" -o "https___api.discogs.com_masters_8753_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39151/versions?page=1" -o "https___api.discogs.com_masters_39151_versions_page=1"
+curl -s "https://api.discogs.com/masters/8752/versions?page=1" -o "https___api.discogs.com_masters_8752_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39179/versions?page=1" -o "https___api.discogs.com_masters_39179_versions_page=1"
+curl -s "https://api.discogs.com/masters/691384/versions?page=1" -o "https___api.discogs.com_masters_691384_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1377596/versions?page=1" -o "https___api.discogs.com_masters_1377596_versions_page=1"
+curl -s "https://api.discogs.com/masters/436038/versions?page=1" -o "https___api.discogs.com_masters_436038_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98783/versions?page=1" -o "https___api.discogs.com_masters_98783_versions_page=1"
+curl -s "https://api.discogs.com/masters/8755/versions?page=1" -o "https___api.discogs.com_masters_8755_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98795/versions?page=1" -o "https___api.discogs.com_masters_98795_versions_page=1"
+curl -s "https://api.discogs.com/masters/549094/versions?page=1" -o "https___api.discogs.com_masters_549094_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39105/versions?page=1" -o "https___api.discogs.com_masters_39105_versions_page=1"
+curl -s "https://api.discogs.com/masters/1272953/versions?page=1" -o "https___api.discogs.com_masters_1272953_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1316341/versions?page=1" -o "https___api.discogs.com_masters_1316341_versions_page=1"
+curl -s "https://api.discogs.com/masters/8756/versions?page=1" -o "https___api.discogs.com_masters_8756_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/264540/versions?page=1" -o "https___api.discogs.com_masters_264540_versions_page=1"
+curl -s "https://api.discogs.com/masters/627602/versions?page=1" -o "https___api.discogs.com_masters_627602_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/270363/versions?page=1" -o "https___api.discogs.com_masters_270363_versions_page=1"
+curl -s "https://api.discogs.com/masters/2416489/versions?page=1" -o "https___api.discogs.com_masters_2416489_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/270364/versions?page=1" -o "https___api.discogs.com_masters_270364_versions_page=1"
+curl -s "https://api.discogs.com/masters/1596679/versions?page=1" -o "https___api.discogs.com_masters_1596679_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/356552/versions?page=1" -o "https___api.discogs.com_masters_356552_versions_page=1"
+curl -s "https://api.discogs.com/masters/8745/versions?page=1" -o "https___api.discogs.com_masters_8745_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1405229/versions?page=1" -o "https___api.discogs.com_masters_1405229_versions_page=1"
+curl -s "https://api.discogs.com/masters/8770/versions?page=1" -o "https___api.discogs.com_masters_8770_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1589417/versions?page=1" -o "https___api.discogs.com_masters_1589417_versions_page=1"
+curl -s "https://api.discogs.com/masters/1668957/versions?page=1" -o "https___api.discogs.com_masters_1668957_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39086/versions?page=1" -o "https___api.discogs.com_masters_39086_versions_page=1"
+curl -s "https://api.discogs.com/masters/8746/versions?page=1" -o "https___api.discogs.com_masters_8746_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1315607/versions?page=1" -o "https___api.discogs.com_masters_1315607_versions_page=1"
+curl -s "https://api.discogs.com/masters/1819763/versions?page=1" -o "https___api.discogs.com_masters_1819763_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98784/versions?page=1" -o "https___api.discogs.com_masters_98784_versions_page=1"
+curl -s "https://api.discogs.com/masters/8750/versions?page=1" -o "https___api.discogs.com_masters_8750_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38949/versions?page=1" -o "https___api.discogs.com_masters_38949_versions_page=1"
+curl -s "https://api.discogs.com/masters/79134/versions?page=1" -o "https___api.discogs.com_masters_79134_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/384660/versions?page=1" -o "https___api.discogs.com_masters_384660_versions_page=1"
+curl -s "https://api.discogs.com/masters/113678/versions?page=1" -o "https___api.discogs.com_masters_113678_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1796327/versions?page=1" -o "https___api.discogs.com_masters_1796327_versions_page=1"
+curl -s "https://api.discogs.com/masters/2416501/versions?page=1" -o "https___api.discogs.com_masters_2416501_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/361801/versions?page=1" -o "https___api.discogs.com_masters_361801_versions_page=1"
+curl -s "https://api.discogs.com/masters/2191664/versions?page=1" -o "https___api.discogs.com_masters_2191664_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1572723/versions?page=1" -o "https___api.discogs.com_masters_1572723_versions_page=1"
+curl -s "https://api.discogs.com/masters/8747/versions?page=1" -o "https___api.discogs.com_masters_8747_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98858/versions?page=1" -o "https___api.discogs.com_masters_98858_versions_page=1"
+curl -s "https://api.discogs.com/masters/74131/versions?page=1" -o "https___api.discogs.com_masters_74131_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39047/versions?page=1" -o "https___api.discogs.com_masters_39047_versions_page=1"
+curl -s "https://api.discogs.com/masters/617685/versions?page=1" -o "https___api.discogs.com_masters_617685_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/187172/versions?page=1" -o "https___api.discogs.com_masters_187172_versions_page=1"
+curl -s "https://api.discogs.com/masters/113690/versions?page=1" -o "https___api.discogs.com_masters_113690_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38937/versions?page=1" -o "https___api.discogs.com_masters_38937_versions_page=1"
+curl -s "https://api.discogs.com/masters/918911/versions?page=1" -o "https___api.discogs.com_masters_918911_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98854/versions?page=1" -o "https___api.discogs.com_masters_98854_versions_page=1"
+curl -s "https://api.discogs.com/masters/784513/versions?page=1" -o "https___api.discogs.com_masters_784513_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39185/versions?page=1" -o "https___api.discogs.com_masters_39185_versions_page=1"
+curl -s "https://api.discogs.com/masters/1437557/versions?page=1" -o "https___api.discogs.com_masters_1437557_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/995098/versions?page=1" -o "https___api.discogs.com_masters_995098_versions_page=1"
+curl -s "https://api.discogs.com/masters/8461315/versions?page=1" -o "https___api.discogs.com_masters_8461315_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/187180/versions?page=1" -o "https___api.discogs.com_masters_187180_versions_page=1"
+curl -s "https://api.discogs.com/masters/528679/versions?page=1" -o "https___api.discogs.com_masters_528679_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/241486/versions?page=1" -o "https___api.discogs.com_masters_241486_versions_page=1"
+curl -s "https://api.discogs.com/masters/2238281/versions?page=1" -o "https___api.discogs.com_masters_2238281_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1641460/versions?page=1" -o "https___api.discogs.com_masters_1641460_versions_page=1"
+curl -s "https://api.discogs.com/masters/2193010/versions?page=1" -o "https___api.discogs.com_masters_2193010_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2183704/versions?page=1" -o "https___api.discogs.com_masters_2183704_versions_page=1"
+curl -s "https://api.discogs.com/masters/1495879/versions?page=1" -o "https___api.discogs.com_masters_1495879_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38942/versions?page=1" -o "https___api.discogs.com_masters_38942_versions_page=1"
+curl -s "https://api.discogs.com/masters/699059/versions?page=1" -o "https___api.discogs.com_masters_699059_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98849/versions?page=1" -o "https___api.discogs.com_masters_98849_versions_page=1"
+curl -s "https://api.discogs.com/masters/899764/versions?page=1" -o "https___api.discogs.com_masters_899764_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39224/versions?page=1" -o "https___api.discogs.com_masters_39224_versions_page=1"
+curl -s "https://api.discogs.com/masters/529469/versions?page=1" -o "https___api.discogs.com_masters_529469_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1693557/versions?page=1" -o "https___api.discogs.com_masters_1693557_versions_page=1"
+curl -s "https://api.discogs.com/masters/1154544/versions?page=1" -o "https___api.discogs.com_masters_1154544_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1826277/versions?page=1" -o "https___api.discogs.com_masters_1826277_versions_page=1"
+curl -s "https://api.discogs.com/masters/2422111/versions?page=1" -o "https___api.discogs.com_masters_2422111_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98865/versions?page=1" -o "https___api.discogs.com_masters_98865_versions_page=1"
+curl -s "https://api.discogs.com/masters/539596/versions?page=1" -o "https___api.discogs.com_masters_539596_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38964/versions?page=1" -o "https___api.discogs.com_masters_38964_versions_page=1"
+curl -s "https://api.discogs.com/masters/768879/versions?page=1" -o "https___api.discogs.com_masters_768879_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2377357/versions?page=1" -o "https___api.discogs.com_masters_2377357_versions_page=1"
+curl -s "https://api.discogs.com/masters/1854421/versions?page=1" -o "https___api.discogs.com_masters_1854421_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2253976/versions?page=1" -o "https___api.discogs.com_masters_2253976_versions_page=1"
+curl -s "https://api.discogs.com/masters/749047/versions?page=1" -o "https___api.discogs.com_masters_749047_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/988416/versions?page=1" -o "https___api.discogs.com_masters_988416_versions_page=1"
+curl -s "https://api.discogs.com/masters/3285430/versions?page=1" -o "https___api.discogs.com_masters_3285430_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2110228/versions?page=1" -o "https___api.discogs.com_masters_2110228_versions_page=1"
+curl -s "https://api.discogs.com/masters/562676/versions?page=1" -o "https___api.discogs.com_masters_562676_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2486584/versions?page=1" -o "https___api.discogs.com_masters_2486584_versions_page=1"
+curl -s "https://api.discogs.com/masters/562851/versions?page=1" -o "https___api.discogs.com_masters_562851_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2110816/versions?page=1" -o "https___api.discogs.com_masters_2110816_versions_page=1"
+curl -s "https://api.discogs.com/masters/994907/versions?page=1" -o "https___api.discogs.com_masters_994907_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98861/versions?page=1" -o "https___api.discogs.com_masters_98861_versions_page=1"
+curl -s "https://api.discogs.com/masters/998168/versions?page=1" -o "https___api.discogs.com_masters_998168_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39130/versions?page=1" -o "https___api.discogs.com_masters_39130_versions_page=1"
+curl -s "https://api.discogs.com/masters/924817/versions?page=1" -o "https___api.discogs.com_masters_924817_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2143603/versions?page=1" -o "https___api.discogs.com_masters_2143603_versions_page=1"
+curl -s "https://api.discogs.com/masters/4506229/versions?page=1" -o "https___api.discogs.com_masters_4506229_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2143624/versions?page=1" -o "https___api.discogs.com_masters_2143624_versions_page=1"
+curl -s "https://api.discogs.com/masters/3284153/versions?page=1" -o "https___api.discogs.com_masters_3284153_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2209207/versions?page=1" -o "https___api.discogs.com_masters_2209207_versions_page=1"
+curl -s "https://api.discogs.com/masters/2482659/versions?page=1" -o "https___api.discogs.com_masters_2482659_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39112/versions?page=1" -o "https___api.discogs.com_masters_39112_versions_page=1"
+curl -s "https://api.discogs.com/masters/1342737/versions?page=1" -o "https___api.discogs.com_masters_1342737_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/236907/versions?page=1" -o "https___api.discogs.com_masters_236907_versions_page=1"
+curl -s "https://api.discogs.com/masters/2185717/versions?page=1" -o "https___api.discogs.com_masters_2185717_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/245793/versions?page=1" -o "https___api.discogs.com_masters_245793_versions_page=1"
+curl -s "https://api.discogs.com/masters/2258519/versions?page=1" -o "https___api.discogs.com_masters_2258519_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/551704/versions?page=1" -o "https___api.discogs.com_masters_551704_versions_page=1"
+curl -s "https://api.discogs.com/masters/2238438/versions?page=1" -o "https___api.discogs.com_masters_2238438_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1738292/versions?page=1" -o "https___api.discogs.com_masters_1738292_versions_page=1"
+curl -s "https://api.discogs.com/masters/3228866/versions?page=1" -o "https___api.discogs.com_masters_3228866_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/385795/versions?page=1" -o "https___api.discogs.com_masters_385795_versions_page=1"
+curl -s "https://api.discogs.com/masters/3232921/versions?page=1" -o "https___api.discogs.com_masters_3232921_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/939201/versions?page=1" -o "https___api.discogs.com_masters_939201_versions_page=1"
+curl -s "https://api.discogs.com/masters/3552726/versions?page=1" -o "https___api.discogs.com_masters_3552726_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/556581/versions?page=1" -o "https___api.discogs.com_masters_556581_versions_page=1"
+curl -s "https://api.discogs.com/masters/4573474/versions?page=1" -o "https___api.discogs.com_masters_4573474_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1738288/versions?page=1" -o "https___api.discogs.com_masters_1738288_versions_page=1"
+curl -s "https://api.discogs.com/masters/4494075/versions?page=1" -o "https___api.discogs.com_masters_4494075_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/629995/versions?page=1" -o "https___api.discogs.com_masters_629995_versions_page=1"
+curl -s "https://api.discogs.com/masters/4968899/versions?page=1" -o "https___api.discogs.com_masters_4968899_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/570750/versions?page=1" -o "https___api.discogs.com_masters_570750_versions_page=1"
+curl -s "https://api.discogs.com/masters/4695680/versions?page=1" -o "https___api.discogs.com_masters_4695680_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/647562/versions?page=1" -o "https___api.discogs.com_masters_647562_versions_page=1"
+curl -s "https://api.discogs.com/masters/4963468/versions?page=1" -o "https___api.discogs.com_masters_4963468_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/750661/versions?page=1" -o "https___api.discogs.com_masters_750661_versions_page=1"
+curl -s "https://api.discogs.com/masters/6237853/versions?page=1" -o "https___api.discogs.com_masters_6237853_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/835866/versions?page=1" -o "https___api.discogs.com_masters_835866_versions_page=1"
+curl -s "https://api.discogs.com/masters/6977262/versions?page=1" -o "https___api.discogs.com_masters_6977262_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1746260/versions?page=1" -o "https___api.discogs.com_masters_1746260_versions_page=1"
+curl -s "https://api.discogs.com/masters/8397614/versions?page=1" -o "https___api.discogs.com_masters_8397614_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/947586/versions?page=1" -o "https___api.discogs.com_masters_947586_versions_page=1"
+curl -s "https://api.discogs.com/masters/8013285/versions?page=1" -o "https___api.discogs.com_masters_8013285_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1118095/versions?page=1" -o "https___api.discogs.com_masters_1118095_versions_page=1"
+curl -s "https://api.discogs.com/masters/9653457/versions?page=1" -o "https___api.discogs.com_masters_9653457_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1216158/versions?page=1" -o "https___api.discogs.com_masters_1216158_versions_page=1"
+curl -s "https://api.discogs.com/masters/10633292/versions?page=1" -o "https___api.discogs.com_masters_10633292_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1370043/versions?page=1" -o "https___api.discogs.com_masters_1370043_versions_page=1"
+curl -s "https://api.discogs.com/masters/10173298/versions?page=1" -o "https___api.discogs.com_masters_10173298_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1534062/versions?page=1" -o "https___api.discogs.com_masters_1534062_versions_page=1"
+curl -s "https://api.discogs.com/masters/12869654/versions?page=1" -o "https___api.discogs.com_masters_12869654_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1619100/versions?page=1" -o "https___api.discogs.com_masters_1619100_versions_page=1"
+curl -s "https://api.discogs.com/masters/14245829/versions?page=1" -o "https___api.discogs.com_masters_14245829_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1915095/versions?page=1" -o "https___api.discogs.com_masters_1915095_versions_page=1"
+curl -s "https://api.discogs.com/masters/12970746/versions?page=1" -o "https___api.discogs.com_masters_12970746_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1938735/versions?page=1" -o "https___api.discogs.com_masters_1938735_versions_page=1"
+curl -s "https://api.discogs.com/masters/12878444/versions?page=1" -o "https___api.discogs.com_masters_12878444_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1863990/versions?page=1" -o "https___api.discogs.com_masters_1863990_versions_page=1"
+curl -s "https://api.discogs.com/masters/12930146/versions?page=1" -o "https___api.discogs.com_masters_12930146_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1535393/versions?page=1" -o "https___api.discogs.com_masters_1535393_versions_page=1"
+curl -s "https://api.discogs.com/masters/12801691/versions?page=1" -o "https___api.discogs.com_masters_12801691_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2122327/versions?page=1" -o "https___api.discogs.com_masters_2122327_versions_page=1"
+curl -s "https://api.discogs.com/masters/15609341/versions?page=1" -o "https___api.discogs.com_masters_15609341_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1589377/versions?page=1" -o "https___api.discogs.com_masters_1589377_versions_page=1"
+curl -s "https://api.discogs.com/masters/13603768/versions?page=1" -o "https___api.discogs.com_masters_13603768_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1915116/versions?page=1" -o "https___api.discogs.com_masters_1915116_versions_page=1"
+curl -s "https://api.discogs.com/masters/13327545/versions?page=1" -o "https___api.discogs.com_masters_13327545_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2486536/versions?page=1" -o "https___api.discogs.com_masters_2486536_versions_page=1"
+curl -s "https://api.discogs.com/masters/13565358/versions?page=1" -o "https___api.discogs.com_masters_13565358_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2899234/versions?page=1" -o "https___api.discogs.com_masters_2899234_versions_page=1"
+curl -s "https://api.discogs.com/masters/25368493/versions?page=1" -o "https___api.discogs.com_masters_25368493_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1799543/versions?page=1" -o "https___api.discogs.com_masters_1799543_versions_page=1"
+curl -s "https://api.discogs.com/masters/13565383/versions?page=1" -o "https___api.discogs.com_masters_13565383_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1558394/versions?page=1" -o "https___api.discogs.com_masters_1558394_versions_page=1"
+curl -s "https://api.discogs.com/masters/13137448/versions?page=1" -o "https___api.discogs.com_masters_13137448_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1558398/versions?page=1" -o "https___api.discogs.com_masters_1558398_versions_page=1"
+curl -s "https://api.discogs.com/masters/13710358/versions?page=1" -o "https___api.discogs.com_masters_13710358_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1558401/versions?page=1" -o "https___api.discogs.com_masters_1558401_versions_page=1"
+curl -s "https://api.discogs.com/masters/13116430/versions?page=1" -o "https___api.discogs.com_masters_13116430_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1663013/versions?page=1" -o "https___api.discogs.com_masters_1663013_versions_page=1"
+curl -s "https://api.discogs.com/masters/13452311/versions?page=1" -o "https___api.discogs.com_masters_13452311_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2486524/versions?page=1" -o "https___api.discogs.com_masters_2486524_versions_page=1"
+curl -s "https://api.discogs.com/masters/18689887/versions?page=1" -o "https___api.discogs.com_masters_18689887_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2002921/versions?page=1" -o "https___api.discogs.com_masters_2002921_versions_page=1"
+curl -s "https://api.discogs.com/masters/16571217/versions?page=1" -o "https___api.discogs.com_masters_16571217_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2907214/versions?page=1" -o "https___api.discogs.com_masters_2907214_versions_page=1"
+curl -s "https://api.discogs.com/masters/19625752/versions?page=1" -o "https___api.discogs.com_masters_19625752_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2421931/versions?page=1" -o "https___api.discogs.com_masters_2421931_versions_page=1"
+curl -s "https://api.discogs.com/masters/21238306/versions?page=1" -o "https___api.discogs.com_masters_21238306_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2037805/versions?page=1" -o "https___api.discogs.com_masters_2037805_versions_page=1"
+curl -s "https://api.discogs.com/masters/17954986/versions?page=1" -o "https___api.discogs.com_masters_17954986_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/558032/versions?page=1" -o "https___api.discogs.com_masters_558032_versions_page=1"
+curl -s "https://api.discogs.com/masters/1617274/versions?page=1" -o "https___api.discogs.com_masters_1617274_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/53828/versions?page=1" -o "https___api.discogs.com_masters_53828_versions_page=1"
+curl -s "https://api.discogs.com/masters/424574/versions?page=1" -o "https___api.discogs.com_masters_424574_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/766087/versions?page=1" -o "https___api.discogs.com_masters_766087_versions_page=1"
+curl -s "https://api.discogs.com/masters/172876/versions?page=1" -o "https___api.discogs.com_masters_172876_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/818375/versions?page=1" -o "https___api.discogs.com_masters_818375_versions_page=1"
+curl -s "https://api.discogs.com/masters/6681179/versions?page=1" -o "https___api.discogs.com_masters_6681179_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/350063/versions?page=1" -o "https___api.discogs.com_masters_350063_versions_page=1"
+curl -s "https://api.discogs.com/masters/2973828/versions?page=1" -o "https___api.discogs.com_masters_2973828_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1173992/versions?page=1" -o "https___api.discogs.com_masters_1173992_versions_page=1"
+curl -s "https://api.discogs.com/masters/996223/versions?page=1" -o "https___api.discogs.com_masters_996223_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/238109/versions?page=1" -o "https___api.discogs.com_masters_238109_versions_page=1"
+curl -s "https://api.discogs.com/masters/1698386/versions?page=1" -o "https___api.discogs.com_masters_1698386_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/43746/versions?page=1" -o "https___api.discogs.com_masters_43746_versions_page=1"
+curl -s "https://api.discogs.com/masters/441875/versions?page=1" -o "https___api.discogs.com_masters_441875_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/132491/versions?page=1" -o "https___api.discogs.com_masters_132491_versions_page=1"
+curl -s "https://api.discogs.com/masters/442788/versions?page=1" -o "https___api.discogs.com_masters_442788_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/81204/versions?page=1" -o "https___api.discogs.com_masters_81204_versions_page=1"
+curl -s "https://api.discogs.com/masters/443152/versions?page=1" -o "https___api.discogs.com_masters_443152_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/836653/versions?page=1" -o "https___api.discogs.com_masters_836653_versions_page=1"
+curl -s "https://api.discogs.com/masters/2963143/versions?page=1" -o "https___api.discogs.com_masters_2963143_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1291547/versions?page=1" -o "https___api.discogs.com_masters_1291547_versions_page=1"
+curl -s "https://api.discogs.com/masters/383584/versions?page=1" -o "https___api.discogs.com_masters_383584_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/142647/versions?page=1" -o "https___api.discogs.com_masters_142647_versions_page=1"
+curl -s "https://api.discogs.com/masters/1203674/versions?page=1" -o "https___api.discogs.com_masters_1203674_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2830664/versions?page=1" -o "https___api.discogs.com_masters_2830664_versions_page=1"
+curl -s "https://api.discogs.com/masters/755337/versions?page=1" -o "https___api.discogs.com_masters_755337_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/106839/versions?page=1" -o "https___api.discogs.com_masters_106839_versions_page=1"
+curl -s "https://api.discogs.com/masters/1095013/versions?page=1" -o "https___api.discogs.com_masters_1095013_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/25288/versions?page=1" -o "https___api.discogs.com_masters_25288_versions_page=1"
+curl -s "https://api.discogs.com/masters/1569475/versions?page=1" -o "https___api.discogs.com_masters_1569475_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/388542/versions?page=1" -o "https___api.discogs.com_masters_388542_versions_page=1"
+curl -s "https://api.discogs.com/masters/2507320/versions?page=1" -o "https___api.discogs.com_masters_2507320_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1309010/versions?page=1" -o "https___api.discogs.com_masters_1309010_versions_page=1"
+curl -s "https://api.discogs.com/masters/11514955/versions?page=1" -o "https___api.discogs.com_masters_11514955_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1737821/versions?page=1" -o "https___api.discogs.com_masters_1737821_versions_page=1"
+curl -s "https://api.discogs.com/masters/8985085/versions?page=1" -o "https___api.discogs.com_masters_8985085_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1674896/versions?page=1" -o "https___api.discogs.com_masters_1674896_versions_page=1"
+curl -s "https://api.discogs.com/masters/13776107/versions?page=1" -o "https___api.discogs.com_masters_13776107_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2500624/versions?page=1" -o "https___api.discogs.com_masters_2500624_versions_page=1"
+curl -s "https://api.discogs.com/masters/22072849/versions?page=1" -o "https___api.discogs.com_masters_22072849_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/69129/versions?page=1" -o "https___api.discogs.com_masters_69129_versions_page=1"
+curl -s "https://api.discogs.com/masters/262345/versions?page=1" -o "https___api.discogs.com_masters_262345_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1006466/versions?page=1" -o "https___api.discogs.com_masters_1006466_versions_page=1"
+curl -s "https://api.discogs.com/masters/1100185/versions?page=1" -o "https___api.discogs.com_masters_1100185_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/558032/versions?page=1" -o "https___api.discogs.com_masters_558032_versions_page=1"
+curl -s "https://api.discogs.com/masters/1617274/versions?page=1" -o "https___api.discogs.com_masters_1617274_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1173993/versions?page=1" -o "https___api.discogs.com_masters_1173993_versions_page=1"
+curl -s "https://api.discogs.com/masters/593437/versions?page=1" -o "https___api.discogs.com_masters_593437_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/53828/versions?page=1" -o "https___api.discogs.com_masters_53828_versions_page=1"
+curl -s "https://api.discogs.com/masters/424574/versions?page=1" -o "https___api.discogs.com_masters_424574_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1173992/versions?page=1" -o "https___api.discogs.com_masters_1173992_versions_page=1"
+curl -s "https://api.discogs.com/masters/996223/versions?page=1" -o "https___api.discogs.com_masters_996223_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1280020/versions?page=1" -o "https___api.discogs.com_masters_1280020_versions_page=1"
+curl -s "https://api.discogs.com/masters/11001706/versions?page=1" -o "https___api.discogs.com_masters_11001706_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/416676/versions?page=1" -o "https___api.discogs.com_masters_416676_versions_page=1"
+curl -s "https://api.discogs.com/masters/1356128/versions?page=1" -o "https___api.discogs.com_masters_1356128_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/613227/versions?page=1" -o "https___api.discogs.com_masters_613227_versions_page=1"
+curl -s "https://api.discogs.com/masters/723929/versions?page=1" -o "https___api.discogs.com_masters_723929_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/350063/versions?page=1" -o "https___api.discogs.com_masters_350063_versions_page=1"
+curl -s "https://api.discogs.com/masters/2973828/versions?page=1" -o "https___api.discogs.com_masters_2973828_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/451154/versions?page=1" -o "https___api.discogs.com_masters_451154_versions_page=1"
+curl -s "https://api.discogs.com/masters/2001346/versions?page=1" -o "https___api.discogs.com_masters_2001346_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/498218/versions?page=1" -o "https___api.discogs.com_masters_498218_versions_page=1"
+curl -s "https://api.discogs.com/masters/3850625/versions?page=1" -o "https___api.discogs.com_masters_3850625_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1222248/versions?page=1" -o "https___api.discogs.com_masters_1222248_versions_page=1"
+curl -s "https://api.discogs.com/masters/1250126/versions?page=1" -o "https___api.discogs.com_masters_1250126_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1580147/versions?page=1" -o "https___api.discogs.com_masters_1580147_versions_page=1"
+curl -s "https://api.discogs.com/masters/514518/versions?page=1" -o "https___api.discogs.com_masters_514518_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1498787/versions?page=1" -o "https___api.discogs.com_masters_1498787_versions_page=1"
+curl -s "https://api.discogs.com/masters/875317/versions?page=1" -o "https___api.discogs.com_masters_875317_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1631365/versions?page=1" -o "https___api.discogs.com_masters_1631365_versions_page=1"
+curl -s "https://api.discogs.com/masters/4938264/versions?page=1" -o "https___api.discogs.com_masters_4938264_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1570494/versions?page=1" -o "https___api.discogs.com_masters_1570494_versions_page=1"
+curl -s "https://api.discogs.com/masters/2000654/versions?page=1" -o "https___api.discogs.com_masters_2000654_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1107694/versions?page=1" -o "https___api.discogs.com_masters_1107694_versions_page=1"
+curl -s "https://api.discogs.com/masters/2181593/versions?page=1" -o "https___api.discogs.com_masters_2181593_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/212227/versions?page=1" -o "https___api.discogs.com_masters_212227_versions_page=1"
+curl -s "https://api.discogs.com/masters/501843/versions?page=1" -o "https___api.discogs.com_masters_501843_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/18233/versions?page=1" -o "https___api.discogs.com_masters_18233_versions_page=1"
+curl -s "https://api.discogs.com/masters/794059/versions?page=1" -o "https___api.discogs.com_masters_794059_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/364155/versions?page=1" -o "https___api.discogs.com_masters_364155_versions_page=1"
+curl -s "https://api.discogs.com/masters/3071660/versions?page=1" -o "https___api.discogs.com_masters_3071660_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1127975/versions?page=1" -o "https___api.discogs.com_masters_1127975_versions_page=1"
+curl -s "https://api.discogs.com/masters/3417330/versions?page=1" -o "https___api.discogs.com_masters_3417330_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1678531/versions?page=1" -o "https___api.discogs.com_masters_1678531_versions_page=1"
+curl -s "https://api.discogs.com/masters/4336991/versions?page=1" -o "https___api.discogs.com_masters_4336991_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1521422/versions?page=1" -o "https___api.discogs.com_masters_1521422_versions_page=1"
+curl -s "https://api.discogs.com/masters/2619766/versions?page=1" -o "https___api.discogs.com_masters_2619766_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/696088/versions?page=1" -o "https___api.discogs.com_masters_696088_versions_page=1"
+curl -s "https://api.discogs.com/masters/653685/versions?page=1" -o "https___api.discogs.com_masters_653685_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/10621/versions?page=1" -o "https___api.discogs.com_masters_10621_versions_page=1"
+curl -s "https://api.discogs.com/masters/611797/versions?page=1" -o "https___api.discogs.com_masters_611797_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1518536/versions?page=1" -o "https___api.discogs.com_masters_1518536_versions_page=1"
+curl -s "https://api.discogs.com/masters/2120468/versions?page=1" -o "https___api.discogs.com_masters_2120468_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1034245/versions?page=1" -o "https___api.discogs.com_masters_1034245_versions_page=1"
+curl -s "https://api.discogs.com/masters/5050912/versions?page=1" -o "https___api.discogs.com_masters_5050912_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/29220/versions?page=1" -o "https___api.discogs.com_masters_29220_versions_page=1"
+curl -s "https://api.discogs.com/masters/1157284/versions?page=1" -o "https___api.discogs.com_masters_1157284_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/774804/versions?page=1" -o "https___api.discogs.com_masters_774804_versions_page=1"
+curl -s "https://api.discogs.com/masters/1829884/versions?page=1" -o "https___api.discogs.com_masters_1829884_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/43746/versions?page=1" -o "https___api.discogs.com_masters_43746_versions_page=1"
+curl -s "https://api.discogs.com/masters/441875/versions?page=1" -o "https___api.discogs.com_masters_441875_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1020248/versions?page=1" -o "https___api.discogs.com_masters_1020248_versions_page=1"
+curl -s "https://api.discogs.com/masters/8696499/versions?page=1" -o "https___api.discogs.com_masters_8696499_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/132491/versions?page=1" -o "https___api.discogs.com_masters_132491_versions_page=1"
+curl -s "https://api.discogs.com/masters/442788/versions?page=1" -o "https___api.discogs.com_masters_442788_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/704396/versions?page=1" -o "https___api.discogs.com_masters_704396_versions_page=1"
+curl -s "https://api.discogs.com/masters/3104649/versions?page=1" -o "https___api.discogs.com_masters_3104649_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/823779/versions?page=1" -o "https___api.discogs.com_masters_823779_versions_page=1"
+curl -s "https://api.discogs.com/masters/4315538/versions?page=1" -o "https___api.discogs.com_masters_4315538_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1747461/versions?page=1" -o "https___api.discogs.com_masters_1747461_versions_page=1"
+curl -s "https://api.discogs.com/masters/1844317/versions?page=1" -o "https___api.discogs.com_masters_1844317_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/481311/versions?page=1" -o "https___api.discogs.com_masters_481311_versions_page=1"
+curl -s "https://api.discogs.com/masters/1844055/versions?page=1" -o "https___api.discogs.com_masters_1844055_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/916610/versions?page=1" -o "https___api.discogs.com_masters_916610_versions_page=1"
+curl -s "https://api.discogs.com/masters/515327/versions?page=1" -o "https___api.discogs.com_masters_515327_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/81204/versions?page=1" -o "https___api.discogs.com_masters_81204_versions_page=1"
+curl -s "https://api.discogs.com/masters/443152/versions?page=1" -o "https___api.discogs.com_masters_443152_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/25429/versions?page=1" -o "https___api.discogs.com_masters_25429_versions_page=1"
+curl -s "https://api.discogs.com/masters/1186973/versions?page=1" -o "https___api.discogs.com_masters_1186973_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/17395/versions?page=1" -o "https___api.discogs.com_masters_17395_versions_page=1"
+curl -s "https://api.discogs.com/masters/699817/versions?page=1" -o "https___api.discogs.com_masters_699817_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/863790/versions?page=1" -o "https___api.discogs.com_masters_863790_versions_page=1"
+curl -s "https://api.discogs.com/masters/464269/versions?page=1" -o "https___api.discogs.com_masters_464269_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/734968/versions?page=1" -o "https___api.discogs.com_masters_734968_versions_page=1"
+curl -s "https://api.discogs.com/masters/974762/versions?page=1" -o "https___api.discogs.com_masters_974762_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1291547/versions?page=1" -o "https___api.discogs.com_masters_1291547_versions_page=1"
+curl -s "https://api.discogs.com/masters/383584/versions?page=1" -o "https___api.discogs.com_masters_383584_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/17196/versions?page=1" -o "https___api.discogs.com_masters_17196_versions_page=1"
+curl -s "https://api.discogs.com/masters/634488/versions?page=1" -o "https___api.discogs.com_masters_634488_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/88367/versions?page=1" -o "https___api.discogs.com_masters_88367_versions_page=1"
+curl -s "https://api.discogs.com/masters/871434/versions?page=1" -o "https___api.discogs.com_masters_871434_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/137698/versions?page=1" -o "https___api.discogs.com_masters_137698_versions_page=1"
+curl -s "https://api.discogs.com/masters/385084/versions?page=1" -o "https___api.discogs.com_masters_385084_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/265299/versions?page=1" -o "https___api.discogs.com_masters_265299_versions_page=1"
+curl -s "https://api.discogs.com/masters/2381085/versions?page=1" -o "https___api.discogs.com_masters_2381085_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/352827/versions?page=1" -o "https___api.discogs.com_masters_352827_versions_page=1"
+curl -s "https://api.discogs.com/masters/2330197/versions?page=1" -o "https___api.discogs.com_masters_2330197_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/894619/versions?page=1" -o "https___api.discogs.com_masters_894619_versions_page=1"
+curl -s "https://api.discogs.com/masters/4174991/versions?page=1" -o "https___api.discogs.com_masters_4174991_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/316671/versions?page=1" -o "https___api.discogs.com_masters_316671_versions_page=1"
+curl -s "https://api.discogs.com/masters/1218151/versions?page=1" -o "https___api.discogs.com_masters_1218151_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/607019/versions?page=1" -o "https___api.discogs.com_masters_607019_versions_page=1"
+curl -s "https://api.discogs.com/masters/590105/versions?page=1" -o "https___api.discogs.com_masters_590105_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/336790/versions?page=1" -o "https___api.discogs.com_masters_336790_versions_page=1"
+curl -s "https://api.discogs.com/masters/1679425/versions?page=1" -o "https___api.discogs.com_masters_1679425_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1761006/versions?page=1" -o "https___api.discogs.com_masters_1761006_versions_page=1"
+curl -s "https://api.discogs.com/masters/2494701/versions?page=1" -o "https___api.discogs.com_masters_2494701_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/909354/versions?page=1" -o "https___api.discogs.com_masters_909354_versions_page=1"
+curl -s "https://api.discogs.com/masters/1699/versions?page=1" -o "https___api.discogs.com_masters_1699_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/145519/versions?page=1" -o "https___api.discogs.com_masters_145519_versions_page=1"
+curl -s "https://api.discogs.com/masters/542317/versions?page=1" -o "https___api.discogs.com_masters_542317_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2920819/versions?page=1" -o "https___api.discogs.com_masters_2920819_versions_page=1"
+curl -s "https://api.discogs.com/masters/15027163/versions?page=1" -o "https___api.discogs.com_masters_15027163_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/897899/versions?page=1" -o "https___api.discogs.com_masters_897899_versions_page=1"
+curl -s "https://api.discogs.com/masters/4281826/versions?page=1" -o "https___api.discogs.com_masters_4281826_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/162928/versions?page=1" -o "https___api.discogs.com_masters_162928_versions_page=1"
+curl -s "https://api.discogs.com/masters/1869605/versions?page=1" -o "https___api.discogs.com_masters_1869605_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1343758/versions?page=1" -o "https___api.discogs.com_masters_1343758_versions_page=1"
+curl -s "https://api.discogs.com/masters/103331/versions?page=1" -o "https___api.discogs.com_masters_103331_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2151778/versions?page=1" -o "https___api.discogs.com_masters_2151778_versions_page=1"
+curl -s "https://api.discogs.com/masters/18960541/versions?page=1" -o "https___api.discogs.com_masters_18960541_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/313213/versions?page=1" -o "https___api.discogs.com_masters_313213_versions_page=1"
+curl -s "https://api.discogs.com/masters/140096/versions?page=1" -o "https___api.discogs.com_masters_140096_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/556427/versions?page=1" -o "https___api.discogs.com_masters_556427_versions_page=1"
+curl -s "https://api.discogs.com/masters/79510/versions?page=1" -o "https___api.discogs.com_masters_79510_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1518990/versions?page=1" -o "https___api.discogs.com_masters_1518990_versions_page=1"
+curl -s "https://api.discogs.com/masters/11428645/versions?page=1" -o "https___api.discogs.com_masters_11428645_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/535505/versions?page=1" -o "https___api.discogs.com_masters_535505_versions_page=1"
+curl -s "https://api.discogs.com/masters/1007275/versions?page=1" -o "https___api.discogs.com_masters_1007275_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/766087/versions?page=1" -o "https___api.discogs.com_masters_766087_versions_page=1"
+curl -s "https://api.discogs.com/masters/172876/versions?page=1" -o "https___api.discogs.com_masters_172876_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/17207/versions?page=1" -o "https___api.discogs.com_masters_17207_versions_page=1"
+curl -s "https://api.discogs.com/masters/1396886/versions?page=1" -o "https___api.discogs.com_masters_1396886_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/759796/versions?page=1" -o "https___api.discogs.com_masters_759796_versions_page=1"
+curl -s "https://api.discogs.com/masters/220194/versions?page=1" -o "https___api.discogs.com_masters_220194_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2360014/versions?page=1" -o "https___api.discogs.com_masters_2360014_versions_page=1"
+curl -s "https://api.discogs.com/masters/1388277/versions?page=1" -o "https___api.discogs.com_masters_1388277_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1117932/versions?page=1" -o "https___api.discogs.com_masters_1117932_versions_page=1"
+curl -s "https://api.discogs.com/masters/9564242/versions?page=1" -o "https___api.discogs.com_masters_9564242_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/932103/versions?page=1" -o "https___api.discogs.com_masters_932103_versions_page=1"
+curl -s "https://api.discogs.com/masters/3078809/versions?page=1" -o "https___api.discogs.com_masters_3078809_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/613648/versions?page=1" -o "https___api.discogs.com_masters_613648_versions_page=1"
+curl -s "https://api.discogs.com/masters/5051457/versions?page=1" -o "https___api.discogs.com_masters_5051457_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1181967/versions?page=1" -o "https___api.discogs.com_masters_1181967_versions_page=1"
+curl -s "https://api.discogs.com/masters/9985935/versions?page=1" -o "https___api.discogs.com_masters_9985935_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1051752/versions?page=1" -o "https___api.discogs.com_masters_1051752_versions_page=1"
+curl -s "https://api.discogs.com/masters/2153301/versions?page=1" -o "https___api.discogs.com_masters_2153301_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1568998/versions?page=1" -o "https___api.discogs.com_masters_1568998_versions_page=1"
+curl -s "https://api.discogs.com/masters/732955/versions?page=1" -o "https___api.discogs.com_masters_732955_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/918298/versions?page=1" -o "https___api.discogs.com_masters_918298_versions_page=1"
+curl -s "https://api.discogs.com/masters/5248888/versions?page=1" -o "https___api.discogs.com_masters_5248888_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/87867/versions?page=1" -o "https___api.discogs.com_masters_87867_versions_page=1"
+curl -s "https://api.discogs.com/masters/1199138/versions?page=1" -o "https___api.discogs.com_masters_1199138_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/439137/versions?page=1" -o "https___api.discogs.com_masters_439137_versions_page=1"
+curl -s "https://api.discogs.com/masters/1012105/versions?page=1" -o "https___api.discogs.com_masters_1012105_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/43920/versions?page=1" -o "https___api.discogs.com_masters_43920_versions_page=1"
+curl -s "https://api.discogs.com/masters/882010/versions?page=1" -o "https___api.discogs.com_masters_882010_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/585393/versions?page=1" -o "https___api.discogs.com_masters_585393_versions_page=1"
+curl -s "https://api.discogs.com/masters/4749763/versions?page=1" -o "https___api.discogs.com_masters_4749763_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/797925/versions?page=1" -o "https___api.discogs.com_masters_797925_versions_page=1"
+curl -s "https://api.discogs.com/masters/1089042/versions?page=1" -o "https___api.discogs.com_masters_1089042_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/79164/versions?page=1" -o "https___api.discogs.com_masters_79164_versions_page=1"
+curl -s "https://api.discogs.com/masters/1360332/versions?page=1" -o "https___api.discogs.com_masters_1360332_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/393527/versions?page=1" -o "https___api.discogs.com_masters_393527_versions_page=1"
+curl -s "https://api.discogs.com/masters/3290164/versions?page=1" -o "https___api.discogs.com_masters_3290164_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/503135/versions?page=1" -o "https___api.discogs.com_masters_503135_versions_page=1"
+curl -s "https://api.discogs.com/masters/946420/versions?page=1" -o "https___api.discogs.com_masters_946420_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/872784/versions?page=1" -o "https___api.discogs.com_masters_872784_versions_page=1"
+curl -s "https://api.discogs.com/masters/7359730/versions?page=1" -o "https___api.discogs.com_masters_7359730_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/715539/versions?page=1" -o "https___api.discogs.com_masters_715539_versions_page=1"
+curl -s "https://api.discogs.com/masters/2063707/versions?page=1" -o "https___api.discogs.com_masters_2063707_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1781267/versions?page=1" -o "https___api.discogs.com_masters_1781267_versions_page=1"
+curl -s "https://api.discogs.com/masters/15024877/versions?page=1" -o "https___api.discogs.com_masters_15024877_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/376036/versions?page=1" -o "https___api.discogs.com_masters_376036_versions_page=1"
+curl -s "https://api.discogs.com/masters/3069078/versions?page=1" -o "https___api.discogs.com_masters_3069078_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1365687/versions?page=1" -o "https___api.discogs.com_masters_1365687_versions_page=1"
+curl -s "https://api.discogs.com/masters/5369827/versions?page=1" -o "https___api.discogs.com_masters_5369827_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/702723/versions?page=1" -o "https___api.discogs.com_masters_702723_versions_page=1"
+curl -s "https://api.discogs.com/masters/5831287/versions?page=1" -o "https___api.discogs.com_masters_5831287_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1093746/versions?page=1" -o "https___api.discogs.com_masters_1093746_versions_page=1"
+curl -s "https://api.discogs.com/masters/7528872/versions?page=1" -o "https___api.discogs.com_masters_7528872_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/818375/versions?page=1" -o "https___api.discogs.com_masters_818375_versions_page=1"
+curl -s "https://api.discogs.com/masters/6681179/versions?page=1" -o "https___api.discogs.com_masters_6681179_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1136055/versions?page=1" -o "https___api.discogs.com_masters_1136055_versions_page=1"
+curl -s "https://api.discogs.com/masters/9580683/versions?page=1" -o "https___api.discogs.com_masters_9580683_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1224396/versions?page=1" -o "https___api.discogs.com_masters_1224396_versions_page=1"
+curl -s "https://api.discogs.com/masters/10708664/versions?page=1" -o "https___api.discogs.com_masters_10708664_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1352004/versions?page=1" -o "https___api.discogs.com_masters_1352004_versions_page=1"
+curl -s "https://api.discogs.com/masters/10971354/versions?page=1" -o "https___api.discogs.com_masters_10971354_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1386332/versions?page=1" -o "https___api.discogs.com_masters_1386332_versions_page=1"
+curl -s "https://api.discogs.com/masters/11194798/versions?page=1" -o "https___api.discogs.com_masters_11194798_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1812797/versions?page=1" -o "https___api.discogs.com_masters_1812797_versions_page=1"
+curl -s "https://api.discogs.com/masters/15980748/versions?page=1" -o "https___api.discogs.com_masters_15980748_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1798872/versions?page=1" -o "https___api.discogs.com_masters_1798872_versions_page=1"
+curl -s "https://api.discogs.com/masters/15350931/versions?page=1" -o "https___api.discogs.com_masters_15350931_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2158867/versions?page=1" -o "https___api.discogs.com_masters_2158867_versions_page=1"
+curl -s "https://api.discogs.com/masters/19013086/versions?page=1" -o "https___api.discogs.com_masters_19013086_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/549578/versions?page=1" -o "https___api.discogs.com_masters_549578_versions_page=1"
+curl -s "https://api.discogs.com/masters/4365913/versions?page=1" -o "https___api.discogs.com_masters_4365913_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/361801/versions?page=1" -o "https___api.discogs.com_masters_361801_versions_page=1"
+curl -s "https://api.discogs.com/masters/3054410/versions?page=1" -o "https___api.discogs.com_masters_3054410_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/264540/versions?page=1" -o "https___api.discogs.com_masters_264540_versions_page=1"
+curl -s "https://api.discogs.com/masters/621186/versions?page=1" -o "https___api.discogs.com_masters_621186_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/759796/versions?page=1" -o "https___api.discogs.com_masters_759796_versions_page=1"
+curl -s "https://api.discogs.com/masters/6317516/versions?page=1" -o "https___api.discogs.com_masters_6317516_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38964/versions?page=1" -o "https___api.discogs.com_masters_38964_versions_page=1"
+curl -s "https://api.discogs.com/masters/8593498/versions?page=1" -o "https___api.discogs.com_masters_8593498_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39112/versions?page=1" -o "https___api.discogs.com_masters_39112_versions_page=1"
+curl -s "https://api.discogs.com/masters/9225769/versions?page=1" -o "https___api.discogs.com_masters_9225769_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/491098/versions?page=1" -o "https___api.discogs.com_masters_491098_versions_page=1"
+curl -s "https://api.discogs.com/masters/3506702/versions?page=1" -o "https___api.discogs.com_masters_3506702_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/2421931/versions?page=1" -o "https___api.discogs.com_masters_2421931_versions_page=1"
+curl -s "https://api.discogs.com/masters/9514595/versions?page=1" -o "https___api.discogs.com_masters_9514595_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/39105/versions?page=1" -o "https___api.discogs.com_masters_39105_versions_page=1"
+curl -s "https://api.discogs.com/masters/6588687/versions?page=1" -o "https___api.discogs.com_masters_6588687_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1216716/versions?page=1" -o "https___api.discogs.com_masters_1216716_versions_page=1"
+curl -s "https://api.discogs.com/masters/7246163/versions?page=1" -o "https___api.discogs.com_masters_7246163_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/1315607/versions?page=1" -o "https___api.discogs.com_masters_1315607_versions_page=1"
+curl -s "https://api.discogs.com/masters/20901817/versions?page=1" -o "https___api.discogs.com_masters_20901817_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/98826/versions?page=1" -o "https___api.discogs.com_masters_98826_versions_page=1"
+curl -s "https://api.discogs.com/masters/7235411/versions?page=1" -o "https___api.discogs.com_masters_7235411_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38969/versions?page=1" -o "https___api.discogs.com_masters_38969_versions_page=1"
+curl -s "https://api.discogs.com/masters/6765463/versions?page=1" -o "https___api.discogs.com_masters_6765463_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/38979/versions?page=1" -o "https___api.discogs.com_masters_38979_versions_page=1"
+curl -s "https://api.discogs.com/masters/12335413/versions?page=1" -o "https___api.discogs.com_masters_12335413_versions_page=1"
 sleep 10
-curl -s "https://api.discogs.com/masters/5241/versions?page=1" -o "https___api.discogs.com_masters_5241_versions_page=1"
+curl -s "https://api.discogs.com/masters/7389908/versions?page=1" -o "https___api.discogs.com_masters_7389908_versions_page=1"
+sleep 10
+

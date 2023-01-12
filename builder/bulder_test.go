@@ -3,6 +3,7 @@ package builder
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"strings"
 	"testing"
 )
@@ -25,6 +26,7 @@ func clean(s string) string {
 }
 
 func (t *testRetriever) get(url string) ([]byte, error) {
+	log.Printf("Getting %v", url)
 	filename := fmt.Sprintf("test/%v", clean(url))
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {

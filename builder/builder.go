@@ -61,7 +61,6 @@ func (b *Bridge) getSubReleases(artist int32) ([]*drtppb.Release, error) {
 				Id: int32(release.Id),
 			})
 	}
-
 	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
 		releases, _, err := b.pullSubReleases(artist, pageNumber)
 		if err != nil {
@@ -87,10 +86,18 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 
 	var pr []*drtppb.Release
 	for _, release := range releases {
-		pr = append(pr,
-			&drtppb.Release{
-				Id: int32(release.Id),
-			})
+		if release.MainRelease > 0 {
+			subreleases, err := b.getSubReleases(int32(release.Id))
+			if err != nil {
+				return nil, err
+			}
+			pr = append(pr, subreleases...)
+		} else {
+			pr = append(pr,
+				&drtppb.Release{
+					Id: int32(release.Id),
+				})
+		}
 	}
 
 	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
