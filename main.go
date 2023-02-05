@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/brotherlogic/damprecordsthepast/builder"
+	"github.com/brotherlogic/damprecordsthepast/remote"
 )
 
 func main() {
@@ -20,5 +21,7 @@ func main() {
 		for _, release := range releases {
 			fmt.Printf("%v\n", release.Id)
 		}
+	case "write":
+		remote.Connect()
 	}
 }
