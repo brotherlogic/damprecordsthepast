@@ -15,6 +15,6 @@ jobs:
       - run: npm ci
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          repoToken: '${{ secrets.PERSONAL_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DAMPRECORDSTHEPAST }}'
           projectId: damprecordsthepast
