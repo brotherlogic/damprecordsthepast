@@ -1,3 +1,3 @@
 # damprecordsthepast
 
-A dynamic discography for The Fall
+A dynamic discography for The Fall.
