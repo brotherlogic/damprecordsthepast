@@ -17,3 +17,10 @@ message StoredMatcher {
     string name = 1;
     string release_ids = 2;
 }
+
+message User {
+    int64 user_id = 1;
+    string token = 2;
+    repeated int32 owned_releases = 3;
+    string image_url = 4;
+}
