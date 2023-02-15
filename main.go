@@ -5,8 +5,11 @@ import (
 	"log"
 	"os"
 
+	pb "github.com/brotherlogic/damprecordsthepast/proto"
+
 	"github.com/brotherlogic/damprecordsthepast/builder"
 	"github.com/brotherlogic/damprecordsthepast/remote"
+	"github.com/brotherlogic/damprecordsthepast/webbuilder"
 )
 
 func main() {
@@ -23,5 +26,10 @@ func main() {
 		}
 	case "write":
 		remote.Connect()
+	case "build":
+		err := webbuilder.BuildMatchPage([]*pb.User{{Name: "brotherlogic"}}, &pb.Matcher{Name: "Complete"})
+		if err != nil {
+			log.Fatalf("Unable to build website: %v", err)
+		}
 	}
 }
