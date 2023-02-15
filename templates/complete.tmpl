@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Damp Records The Past</title>
+  </head>
+  <body>
+    <title>Damp Records The Past</title>
+    <p>A Dynamic Fall Discography</p>
+    <h1>{{.MatchTitle}}</h1>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Percentage</th>
+      </tr>{{with .Matches}}{{ range . }}
+      <tr>
+        <td>{{.Username}}</td>
+        <td>{{.Percentage}}%</td>
+      </tr>{{ end }}{{ end }}
+    </table>
+  </body>
+</html>
