@@ -19,7 +19,7 @@ jobs:
       - name: Run build
         run: go build
       - run : ls
-      - run: damprecordsthepast build
+      - run: ./damprecordsthepast build
       - run: npm ci
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
