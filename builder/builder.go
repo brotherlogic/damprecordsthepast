@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"time"
 
@@ -35,6 +36,8 @@ func (p *ProdRetriever) get(url string) ([]byte, error) {
 	if err != nil {
 		return []byte{}, err
 	}
+
+	log.Printf("GET %v -> %v", url, resp.StatusCode)
 
 	if resp.StatusCode != 200 {
 		if resp.StatusCode == 429 {
