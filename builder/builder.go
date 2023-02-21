@@ -182,3 +182,56 @@ func (b *Bridge) pullSubReleases(release int32, pageNumber int) ([]*ReleasePageD
 
 	return ret.Versions, ret.Pagination, nil
 }
+
+type UserCollectionPageData struct {
+	Pagination *Pagination
+	Releases   []*ReleasePageData
+}
+
+func (b *Bridge) pullUserCollection(username string, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
+	url := fmt.Sprintf("%vusers/%v/collection/folders/0/releases?page=%v&per_page=100", urlBase, username, pageNumber)
+
+	res, err := b.r.get(url)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	ret := &UserCollectionPageData{}
+	err = json.Unmarshal(res, ret)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return ret.Releases, ret.Pagination, nil
+}
+
+func (b *Bridge) GetUserCollection(user string) ([]*drtppb.Release, error) {
+	releases, pagination, err := b.pullUserCollection(user, 1)
+	if err != nil {
+		return nil, err
+	}
+
+	var pr []*drtppb.Release
+	for _, release := range releases {
+		pr = append(pr,
+			&drtppb.Release{
+				Id: int32(release.Id),
+			})
+	}
+
+	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
+		releases, _, err := b.pullUserCollection(user, pageNumber)
+		if err != nil {
+			return nil, err
+		}
+
+		for _, release := range releases {
+			pr = append(pr,
+				&drtppb.Release{
+					Id: int32(release.Id),
+				})
+		}
+	}
+
+	return pr, err
+}

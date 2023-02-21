@@ -33,6 +33,13 @@ func main() {
 		if err != nil {
 			log.Fatalf("Unable to build website: %v", err)
 		}
+	case "user":
+		bridge := builder.GetBridge()
+		releases, err := bridge.GetUserCollection("brotherlogic")
+		if err != nil {
+			log.Fatalf("Unable to pull collection: %v", err)
+		}
+		fmt.Printf("Found %v releases\n", len(releases))
 	case "store_full_match":
 		bridge := builder.GetBridge()
 		releases, err := bridge.GetReleases(78465) // Working on Swell Maps
