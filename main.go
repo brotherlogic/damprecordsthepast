@@ -40,6 +40,24 @@ func main() {
 			log.Fatalf("Unable to pull collection: %v", err)
 		}
 		fmt.Printf("Found %v releases\n", len(releases))
+	case "store_full_user":
+		bridge := builder.GetBridge()
+		releases, err := bridge.GetUserCollection("brotherlogic")
+		if err != nil {
+			log.Fatalf("Unable to pull collection: %v", err)
+		}
+
+		user := &pb.User{
+			Name: "brotherlogic",
+		}
+		for _, release := range releases {
+			user.OwnedReleases = append(user.OwnedReleases, release.GetId())
+		}
+
+		ctx := context.Background()
+		remote := remote.Connect()
+		err = remote.WriteUser(ctx, core.MarshalUser(user))
+		fmt.Printf("Stored: %v\n", err)
 	case "store_full_match":
 		bridge := builder.GetBridge()
 		releases, err := bridge.GetReleases(78465) // Working on Swell Maps
