@@ -5,16 +5,16 @@
   <body>
     <title>Damp Records The Past</title>
     <p>A Dynamic Fall Discography</p>
-    <h1><a href="complete.html">Complete Collectors</a></h1>
+    <h1>{{.MatchTitle}}</h1>
     <table>
       <tr>
         <th>Username</th>
         <th>Percentage</th>
-      </tr>
+      </tr>{{with .Matches}}{{ range . }}
       <tr>
-        <td>brotherlogic</td>
-        <td>56%</td>
-      </tr>
+        <td>{{.Username}}</td>
+        <td>{{.Percentage}}%</td>
+      </tr>{{ end }}{{ end }}
     </table>
   </body>
 </html>
