@@ -43,3 +43,8 @@ func (r *Remote) WriteMatcher(ctx context.Context, matcher *pb.StoredMatcher) er
 	_, err := r.store.Collection("matchers").Doc(fmt.Sprintf("%v", matcher.GetName())).Set(ctx, matcher)
 	return err
 }
+
+func (r *Remote) WriteUser(ctx context.Context, user *pb.StoredUser) error {
+	_, err := r.store.Collection("users").Doc(fmt.Sprintf("%v", user.GetName())).Set(ctx, user)
+	return err
+}
