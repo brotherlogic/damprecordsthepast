@@ -29,7 +29,17 @@ func main() {
 	case "write":
 		remote.Connect()
 	case "build":
-		err := webbuilder.BuildMatchPage([]*pb.User{{Name: "brotherlogic"}}, &pb.Matcher{Name: "Complete"})
+		ctx := context.Background()
+		remote := remote.Connect()
+		users, err := remote.GetUsers(ctx)
+		if err != nil {
+			log.Fatalf("Cannot get users: %v", err)
+		}
+		matcher, err := remote.GetMatcher(ctx, "full")
+		if err != nil {
+			log.Fatalf("Cannot get matcher: %v", err)
+		}
+		err = webbuilder.BuildMatchPage(users, matcher)
 		if err != nil {
 			log.Fatalf("Unable to build website: %v", err)
 		}

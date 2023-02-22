@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/brotherlogic/damprecordsthepast/core"
 	pb "github.com/brotherlogic/damprecordsthepast/proto"
 	"google.golang.org/api/option"
 
@@ -42,6 +43,34 @@ func Connect() *Remote {
 func (r *Remote) WriteMatcher(ctx context.Context, matcher *pb.StoredMatcher) error {
 	_, err := r.store.Collection("matchers").Doc(fmt.Sprintf("%v", matcher.GetName())).Set(ctx, matcher)
 	return err
+}
+
+func (r *Remote) GetUsers(ctx context.Context) ([]*pb.User, error) {
+	res, err := r.store.Collection("users").Documents(ctx).GetAll()
+
+	if err != nil {
+		return nil, err
+	}
+
+	var users []*pb.User
+	for _, user := range res {
+		suser := &pb.StoredUser{}
+		user.DataTo(suser)
+		users = append(users, core.UnmarshalUser(suser))
+	}
+
+	return users, nil
+}
+
+func (r *Remote) GetMatcher(ctx context.Context, name string) (*pb.Matcher, error) {
+	res, err := r.store.Collection("matchers").Doc(name).Get(ctx)
+	if err != nil {
+		return nil, err
+	}
+
+	matcher := &pb.StoredMatcher{}
+	res.DataTo(matcher)
+	return core.UnmarshalMatcher(matcher), nil
 }
 
 func (r *Remote) WriteUser(ctx context.Context, user *pb.StoredUser) error {
