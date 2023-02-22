@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"os"
 
+	"github.com/brotherlogic/damprecordsthepast/core"
 	pb "github.com/brotherlogic/damprecordsthepast/proto"
 )
 
@@ -20,7 +21,7 @@ type Match struct {
 func BuildMatchPage(users []*pb.User, matcher *pb.Matcher) error {
 	MatchPage := &MatchPage{MatchTitle: matcher.GetName(), Matches: make([]*Match, 0)}
 	for _, user := range users {
-		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: 56})
+		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: int32(core.ComputeMatch(user, matcher))})
 	}
 
 	template, err := template.ParseFiles("templates/complete.tmpl")

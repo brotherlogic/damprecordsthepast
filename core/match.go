@@ -2,7 +2,7 @@ package core
 
 import pb "github.com/brotherlogic/damprecordsthepast/proto"
 
-func computeMatch(user *pb.User, matcher *pb.Matcher) float64 {
+func ComputeMatch(user *pb.User, matcher *pb.Matcher) float64 {
 	matched := float64(0)
 	count := float64(0)
 
