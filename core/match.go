@@ -1,17 +1,21 @@
 package core
 
-import pb "github.com/brotherlogic/damprecordsthepast/proto"
+import (
+	pb "github.com/brotherlogic/damprecordsthepast/proto"
+)
 
 func ComputeMatch(user *pb.User, matcher *pb.Matcher) float64 {
 	matched := float64(0)
 	count := float64(0)
 
-	for _, entry := range matcher.GetReleaseId() {
+	for _, entry := range matcher.GetMatches() {
 		found := false
-		for _, release := range user.GetOwnedReleases() {
-			if release == entry {
-				found = true
-				break
+		for _, id := range entry.GetReleaseId() {
+			for _, release := range user.GetOwnedReleases() {
+				if release == id {
+					found = true
+					break
+				}
 			}
 		}
 

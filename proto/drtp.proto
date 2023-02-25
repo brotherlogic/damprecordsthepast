@@ -10,12 +10,16 @@ message Release {
 
 message Matcher {
     string name = 1;
-    repeated int32 release_id = 2;
+    repeated Match matches = 2;
+}
+
+message Match {
+    repeated int32 release_id = 1;
 }
 
 message StoredMatcher {
     string name = 1;
-    string release_ids = 2;
+    string matches = 2;
 }
 
 message User {
