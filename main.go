@@ -70,7 +70,7 @@ func main() {
 		fmt.Printf("Stored: %v\n", err)
 	case "store_full_match":
 		bridge := builder.GetBridge()
-		releases, err := bridge.GetReleases(78465) // Working on Swell Maps
+		releases, err := bridge.GetReleases(2228) // Working on Swell Maps
 		if err != nil {
 			log.Fatalf("Unable to get releases: %v", err)
 		}
@@ -80,7 +80,7 @@ func main() {
 			Name: "full",
 		}
 		for _, release := range releases {
-			match.ReleaseId = append(match.ReleaseId, release.GetId())
+			match.Matches = append(match.Matches, &pb.Match{ReleaseId: []int32{release.GetId()}})
 		}
 
 		ctx := context.Background()
