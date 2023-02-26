@@ -8,6 +8,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strconv"
+	"strings"
 	"time"
 
 	drtppb "github.com/brotherlogic/damprecordsthepast/proto"
@@ -234,4 +236,38 @@ func (b *Bridge) GetUserCollection(user string) ([]*drtppb.Release, error) {
 	}
 
 	return pr, err
+}
+
+func (b *Bridge) BuildMatcher(f string) *drtppb.Matcher {
+	data, err := ioutil.ReadFile(f)
+	if err != nil {
+		log.Fatalf("Bad file read: %v (%v)", err, f)
+	}
+
+	lines := strings.Split(string(data), "\n")
+
+	if lines[0] == "M" { // This is a file of master releases
+		m := &drtppb.Matcher{Name: lines[1]}
+		for _, line := range lines[2:] {
+			num, err := strconv.ParseInt(line, 10, 32)
+			if err != nil {
+				log.Fatalf("Bad num: %v", line)
+			}
+			releases, err := b.getSubReleases(int32(num))
+			if err != nil {
+				log.Fatalf("Bad read: %v", err)
+			}
+
+			match := &drtppb.Match{}
+			for _, release := range releases {
+				match.ReleaseId = append(match.ReleaseId, release.GetId())
+			}
+
+			m.Matches = append(m.Matches, match)
+		}
+
+		return m
+	}
+
+	return nil
 }

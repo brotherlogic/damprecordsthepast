@@ -50,6 +50,13 @@ func main() {
 			log.Fatalf("Unable to pull collection: %v", err)
 		}
 		fmt.Printf("Found %v releases\n", len(releases))
+	case "file":
+		bridge := builder.GetBridge()
+		matcher := bridge.BuildMatcher(os.Args[2])
+		ctx := context.Background()
+		remote := remote.Connect()
+		err := remote.WriteMatcher(ctx, core.Marshalmatcher(matcher))
+		fmt.Printf("Stored: %v\n", err)
 	case "store_full_user":
 		bridge := builder.GetBridge()
 		releases, err := bridge.GetUserCollection("brotherlogic")
