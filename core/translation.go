@@ -10,7 +10,7 @@ import (
 )
 
 func Marshalmatcher(in *pb.Matcher) *pb.StoredMatcher {
-	sm := &pb.StoredMatcher{Name: in.GetName()}
+	sm := &pb.StoredMatcher{Name: in.GetName(), SimpleName: in.GetSimpleName()}
 
 	var strs []string
 	for _, match := range in.GetMatches() {
@@ -33,7 +33,7 @@ func Marshalmatcher(in *pb.Matcher) *pb.StoredMatcher {
 }
 
 func UnmarshalMatcher(in *pb.StoredMatcher) *pb.Matcher {
-	m := &pb.Matcher{Name: in.GetName(), Matches: make([]*pb.Match, 0)}
+	m := &pb.Matcher{Name: in.GetName(), SimpleName: in.GetSimpleName(), Matches: make([]*pb.Match, 0)}
 
 	for _, match := range strings.Split(in.GetMatches(), ";") {
 		var releases []int32

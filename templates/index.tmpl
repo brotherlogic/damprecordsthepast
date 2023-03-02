@@ -11,17 +11,12 @@
         <th>Username</th>
         <th>Percentage</th>
       </tr>
-       </tr>
+       </tr>{{with .Matches}}{{ range . }}
       <tr>
-        <td>All Releases</td>
-         <td>brotherlogic</td>
-        <td>7%</td>
-      </tr>
-      <tr>
-        <td>Studio Albums</td>
-         <td>brotherlogic</td>
-        <td>100%</td>
-      </tr>
+        <td>{{.Matchname}}</td>
+         <td>{{.Username}}</td>
+        <td>{{.Percentage}}%</td>
+      </tr>{{ end }}{{ end }}
     </table>
   </body>
 </html>

@@ -247,8 +247,8 @@ func (b *Bridge) BuildMatcher(f string) *drtppb.Matcher {
 	lines := strings.Split(string(data), "\n")
 
 	if lines[0] == "M" { // This is a file of master releases
-		m := &drtppb.Matcher{Name: lines[1]}
-		for _, line := range lines[2:] {
+		m := &drtppb.Matcher{Name: lines[1], SimpleName: lines[2]}
+		for _, line := range lines[3:] {
 			num, err := strconv.ParseInt(line, 10, 32)
 			if err != nil {
 				log.Fatalf("Bad num: %v", line)
