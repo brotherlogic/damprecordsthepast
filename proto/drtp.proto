@@ -22,6 +22,8 @@ message Match {
 message StoredMatcher {
     string name = 1;
     string matches = 2;
+    string description = 3;
+    string simple_name = 4;
 }
 
 message User {
