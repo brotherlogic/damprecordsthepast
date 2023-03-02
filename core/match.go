@@ -25,5 +25,5 @@ func ComputeMatch(user *pb.User, matcher *pb.Matcher) float64 {
 		count++
 	}
 
-	return matched / count
+	return 100 * (matched / count)
 }

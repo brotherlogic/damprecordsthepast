@@ -35,13 +35,20 @@ func main() {
 		if err != nil {
 			log.Fatalf("Cannot get users: %v", err)
 		}
-		matcher, err := remote.GetMatcher(ctx, "full")
+		matchers, err := remote.GetMatchers(ctx)
 		if err != nil {
-			log.Fatalf("Cannot get matcher: %v", err)
+			log.Fatalf("Cannot read matchers: %v", err)
 		}
-		err = webbuilder.BuildMatchPage(users, matcher)
+		for _, matcher := range matchers {
+			err = webbuilder.BuildMatchPage(users, matcher)
+			if err != nil {
+				log.Fatalf("Unable to build website: %v", err)
+			}
+		}
+
+		err = webbuilder.BuildIndexPage(users, matchers)
 		if err != nil {
-			log.Fatalf("Unable to build website: %v", err)
+			log.Fatalf("Unable to build index: %v", err)
 		}
 	case "user":
 		bridge := builder.GetBridge()
@@ -84,7 +91,8 @@ func main() {
 		log.Printf("Got %v releases", len(releases))
 
 		match := &pb.Matcher{
-			Name: "full",
+			Name:       "All Releases",
+			SimpleName: "full",
 		}
 		for _, release := range releases {
 			match.Matches = append(match.Matches, &pb.Match{ReleaseId: []int32{release.GetId()}})

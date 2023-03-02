@@ -12,6 +12,7 @@ message Matcher {
     string name = 1;
     repeated Match matches = 2;
     string description = 3;
+    string simple_name = 4;
 }
 
 message Match {

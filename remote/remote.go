@@ -73,6 +73,22 @@ func (r *Remote) GetMatcher(ctx context.Context, name string) (*pb.Matcher, erro
 	return core.UnmarshalMatcher(matcher), nil
 }
 
+func (r *Remote) GetMatchers(ctx context.Context) ([]*pb.Matcher, error) {
+	res, err := r.store.Collection("matchers").Documents(ctx).GetAll()
+	if err != nil {
+		return nil, err
+	}
+
+	var matches []*pb.Matcher
+	for _, data := range res {
+		matcher := &pb.StoredMatcher{}
+		data.DataTo(matcher)
+		matches = append(matches, core.UnmarshalMatcher(matcher))
+	}
+
+	return matches, nil
+}
+
 func (r *Remote) WriteUser(ctx context.Context, user *pb.StoredUser) error {
 	_, err := r.store.Collection("users").Doc(fmt.Sprintf("%v", user.GetName())).Set(ctx, user)
 	return err
