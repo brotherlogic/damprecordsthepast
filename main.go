@@ -102,5 +102,7 @@ func main() {
 		remote := remote.Connect()
 		err = remote.WriteMatcher(ctx, core.Marshalmatcher(match))
 		fmt.Printf("Stored: %v\n", err)
+	default:
+		fmt.Printf("Unknown command: %v\n", os.Args[1])
 	}
 }
