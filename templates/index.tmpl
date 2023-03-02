@@ -13,7 +13,7 @@
       </tr>
        </tr>{{with .Matches}}{{ range . }}
       <tr>
-        <td>{{.Matchname}}</td>
+        <td><a href="{{.Shortname}}.html">{{.Matchname}}</a></td>
          <td>{{.Username}}</td>
         <td>{{.Percentage}}%</td>
       </tr>{{ end }}{{ end }}

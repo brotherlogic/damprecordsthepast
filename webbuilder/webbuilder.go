@@ -22,6 +22,7 @@ type Match struct {
 	Username   string
 	Percentage int32
 	Matchname  string
+	Shortname  string
 }
 
 func BuildMatchPage(users []*pb.User, matcher *pb.Matcher) error {
@@ -59,6 +60,7 @@ func BuildIndexPage(users []*pb.User, matchers []*pb.Matcher) error {
 			Matchname:  match.GetName(),
 			Username:   bestUser,
 			Percentage: int32(bestPerc),
+			Shortname:  match.GetSimpleName(),
 		})
 	}
 
