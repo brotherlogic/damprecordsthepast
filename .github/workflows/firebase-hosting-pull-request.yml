@@ -19,7 +19,7 @@ jobs:
       - name: Run build
         run: go build
       - name: Get the file from the secret
-        run: echo "${{ secrets.FIREBASE_KEY }}"" | base64 -d > serviceAccountKey.json
+        run: echo "${{ secrets.FIREBASE_KEY }}" | base64 -d > serviceAccountKey.json
       - name: validate the key
         run: cat serviceAccountKey.json
       - name: Execute
