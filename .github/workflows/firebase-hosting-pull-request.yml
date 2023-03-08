@@ -20,7 +20,7 @@ jobs:
         run: go build
       - name: Get file
         run: echo "${{ secrets.FIREBASE_KEY }}" > serviceAccountKey.json
-      - name: validate
+      - name: validate the key
         run: cat serviceAccountKey.json
       - name: Execute
         run: ./damprecordsthepast build
