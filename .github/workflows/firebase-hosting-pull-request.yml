@@ -19,9 +19,7 @@ jobs:
       - name: Run build
         run: go build
       - name: Get the file
-        run: echo $TEST_ENV_FILE  > serviceAccountKey.json
-        env:
-          TEST_ENV_FILE : ${{secrets.FIREBASE_KEY }}
+        run: echo ${{ secrets.FIREBASE_KEY }} | base64 -d > serviceAccountKey.json
       - name: validate the key
         run: cat serviceAccountKey.json
       - name: Execute
