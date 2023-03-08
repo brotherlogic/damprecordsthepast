@@ -29,12 +29,31 @@ func Connect() *Remote {
 	conf := &firebase.Config{ProjectID: "damprecordsthepast"}
 	app, err := firebase.NewApp(ctx, conf, opt)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalf("Bad app build: %v", err)
 	}
 
 	client, err := app.Firestore(ctx)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalf("Unable to connecto to firestore: %v", err)
+	}
+
+	return &Remote{store: client}
+}
+
+func ConnectEnv(data string) *Remote {
+	// Use the application default credentials
+	ctx := context.Background()
+	// Fetch the service account key JSON file contents
+	opt := option.WithCredentialsJSON([]byte(data))
+	conf := &firebase.Config{ProjectID: "damprecordsthepast"}
+	app, err := firebase.NewApp(ctx, conf, opt)
+	if err != nil {
+		log.Fatalf("Bad app build: %v", err)
+	}
+
+	client, err := app.Firestore(ctx)
+	if err != nil {
+		log.Fatalf("Unable to connecto to firestore: %v", err)
 	}
 
 	return &Remote{store: client}
