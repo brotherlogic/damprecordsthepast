@@ -1,0 +1,30 @@
+name: Deploy to Firebase Hosting on PR
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  build_and_deploy:
+    permissions:
+      pull-requests: write
+      checks: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.18.1'
+      - name: Run build
+        run: go build
+      - name: Get the file from the secret
+        run: echo "${{ secrets.FIREBASE_KEY }}" | base64 -d > serviceAccountKey.json
+      - name: validate the key
+        run: cat serviceAccountKey.json
+      - name: Execute
+        run: ./damprecordsthepast build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DAMPRECORDSTHEPAST }}'
+          projectId: damprecordsthepast
+          channelId: live
