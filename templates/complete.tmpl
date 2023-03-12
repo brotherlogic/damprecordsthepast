@@ -12,7 +12,7 @@
         <th>Percentage</th>
       </tr>{{with .Matches}}{{ range . }}
       <tr>
-        <td>{{.Username}}</td>
+        <td><a href="{{.Username}}-{{.Shortname}}.html">{{.Username}}</a></td>
         <td>{{.Percentage}}%</td>
       </tr>{{ end }}{{ end }}
     </table>
