@@ -258,11 +258,7 @@ func (b *Bridge) BuildMatcher(f string) *drtppb.Matcher {
 				log.Fatalf("Bad read: %v", err)
 			}
 
-			match := &drtppb.Match{}
-			for _, release := range releases {
-				match.ReleaseId = append(match.ReleaseId, release.GetId())
-			}
-
+			match := &drtppb.Match{Release: releases}
 			m.Matches = append(m.Matches, match)
 		}
 

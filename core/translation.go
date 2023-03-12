@@ -14,13 +14,13 @@ func Marshalmatcher(in *pb.Matcher) *pb.StoredMatcher {
 
 	var strs []string
 	for _, match := range in.GetMatches() {
-		sort.SliceStable(match.ReleaseId, func(a, b int) bool {
-			return match.ReleaseId[a] < match.ReleaseId[b]
+		sort.SliceStable(match.Release, func(a, b int) bool {
+			return match.Release[a].GetId() < match.Release[b].GetId()
 		})
 
-		str := fmt.Sprintf("%v", match.ReleaseId[0])
-		for i := 1; i < len(match.ReleaseId); i++ {
-			str += fmt.Sprintf(",%v", match.ReleaseId[i])
+		str := fmt.Sprintf("%v|%v", match.Release[0].GetId(), match.Release[0].GetTitle())
+		for i := 1; i < len(match.Release); i++ {
+			str += fmt.Sprintf(",%v|%v", match.Release[i].GetId(), match.Release[i].GetTitle())
 		}
 
 		strs = append(strs, str)
@@ -36,17 +36,18 @@ func UnmarshalMatcher(in *pb.StoredMatcher) *pb.Matcher {
 	m := &pb.Matcher{Name: in.GetName(), SimpleName: in.GetSimpleName(), Matches: make([]*pb.Match, 0)}
 
 	for _, match := range strings.Split(in.GetMatches(), ";") {
-		var releases []int32
+		var releases []*pb.Release
 		for _, elem := range strings.Split(match, ",") {
-			num, err := strconv.ParseInt(elem, 10, 32)
+			splits := strings.Split(elem, "|")
+			num, err := strconv.ParseInt(splits[0], 10, 32)
 			if err != nil {
 				panic(err)
 			}
 
-			releases = append(releases, int32(num))
+			releases = append(releases, &pb.Release{Id: int32(num), Title: splits[1]})
 		}
 
-		m.Matches = append(m.Matches, &pb.Match{ReleaseId: releases})
+		m.Matches = append(m.Matches, &pb.Match{Release: releases})
 	}
 
 	return m

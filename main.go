@@ -50,6 +50,15 @@ func main() {
 		if err != nil {
 			log.Fatalf("Unable to build index: %v", err)
 		}
+
+		for _, user := range users {
+			for _, matcher := range matchers {
+				err = webbuilder.BuildUserMatchPage(user, matcher)
+				if err != nil {
+					log.Fatalf("Unable to build user match page for %v and %v", user.GetName(), matcher.GetName())
+				}
+			}
+		}
 	case "user":
 		bridge := builder.GetBridge()
 		releases, err := bridge.GetUserCollection("brotherlogic")
@@ -95,7 +104,7 @@ func main() {
 			SimpleName: "full",
 		}
 		for _, release := range releases {
-			match.Matches = append(match.Matches, &pb.Match{ReleaseId: []int32{release.GetId()}})
+			match.Matches = append(match.Matches, &pb.Match{Release: []*pb.Release{release}})
 		}
 
 		ctx := context.Background()

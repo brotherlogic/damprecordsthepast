@@ -6,6 +6,7 @@ option go_package = "github.com/brotherlogic/damp/proto";
 
 message Release {
     int32 id = 1;
+    string title = 2;
 }
 
 message Matcher {
@@ -16,7 +17,7 @@ message Matcher {
 }
 
 message Match {
-    repeated int32 release_id = 1;
+    repeated Release release = 1;
 }
 
 message StoredMatcher {

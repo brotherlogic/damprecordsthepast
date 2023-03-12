@@ -28,7 +28,8 @@ type Match struct {
 func BuildMatchPage(users []*pb.User, matcher *pb.Matcher) error {
 	MatchPage := &MatchPage{MatchTitle: matcher.GetName(), Matches: make([]*Match, 0)}
 	for _, user := range users {
-		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: int32(core.ComputeMatch(user, matcher))})
+		match, _ := core.ComputeMatch(user, matcher)
+		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: int32(match)})
 	}
 
 	template, err := template.ParseFiles("templates/complete.tmpl")
@@ -43,13 +44,39 @@ func BuildMatchPage(users []*pb.User, matcher *pb.Matcher) error {
 	return template.Execute(file, MatchPage)
 }
 
+type UserMatchPage struct {
+	Username   string
+	MatchTitle string
+	Percentage float64
+	Missing    []*pb.Release
+}
+
+func BuildUserMatchPage(user *pb.User, matcher *pb.Matcher) error {
+	userMatchPage := &UserMatchPage{MatchTitle: matcher.GetName(), Missing: make([]*pb.Release, 0)}
+	match, missing := core.ComputeMatch(user, matcher)
+
+	userMatchPage.Percentage = match
+	userMatchPage.Missing = missing
+
+	template, err := template.ParseFiles("templates/user.tmpl")
+	if err != nil {
+		return err
+	}
+	file, err := os.Create(fmt.Sprintf("public/%v-%v.html", user.GetName(), matcher.GetSimpleName()))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	return template.Execute(file, userMatchPage)
+}
+
 func BuildIndexPage(users []*pb.User, matchers []*pb.Matcher) error {
 	IndexPage := &IndexPage{Matches: make([]*Match, 0)}
 	for _, match := range matchers {
 		bestUser := ""
 		bestPerc := float64(0)
 		for _, user := range users {
-			matchv := core.ComputeMatch(user, match)
+			matchv, _ := core.ComputeMatch(user, match)
 			if matchv > bestPerc {
 				bestUser = user.Name
 				bestPerc = matchv
