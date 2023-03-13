@@ -9,6 +9,13 @@ import (
 	pb "github.com/brotherlogic/damprecordsthepast/proto"
 )
 
+func convertForStorage(in string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(in, ";", "ASEMICOLON"), ",", "ACOMMA")
+}
+func convertFromStorage(in string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(in, "ASEMICOLON", ";"), "ACOMMA", ",")
+}
+
 func Marshalmatcher(in *pb.Matcher) *pb.StoredMatcher {
 	sm := &pb.StoredMatcher{Name: in.GetName(), SimpleName: in.GetSimpleName()}
 
@@ -18,9 +25,9 @@ func Marshalmatcher(in *pb.Matcher) *pb.StoredMatcher {
 			return match.Release[a].GetId() < match.Release[b].GetId()
 		})
 
-		str := fmt.Sprintf("%v|%v", match.Release[0].GetId(), match.Release[0].GetTitle())
+		str := fmt.Sprintf("%v|%v", match.Release[0].GetId(), convertForStorage(match.Release[0].GetTitle()))
 		for i := 1; i < len(match.Release); i++ {
-			str += fmt.Sprintf(",%v|%v", match.Release[i].GetId(), match.Release[i].GetTitle())
+			str += fmt.Sprintf(",%v|%v", match.Release[i].GetId(), convertForStorage(match.Release[i].GetTitle()))
 		}
 
 		strs = append(strs, str)
@@ -44,7 +51,7 @@ func UnmarshalMatcher(in *pb.StoredMatcher) *pb.Matcher {
 				panic(err)
 			}
 
-			releases = append(releases, &pb.Release{Id: int32(num), Title: splits[1]})
+			releases = append(releases, &pb.Release{Id: int32(num), Title: convertFromStorage(splits[1])})
 		}
 
 		m.Matches = append(m.Matches, &pb.Match{Release: releases})

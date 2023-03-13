@@ -68,6 +68,10 @@ func TestGetReleases(t *testing.T) {
 		if release.Id == 5241 {
 			foundNIN = true
 		}
+
+		if release.Id == 530182 && release.Title != "The Less You Look, The More You Find" {
+			t.Errorf("Bad Release Title: %+v", release)
+		}
 	}
 
 	if foundNIN {

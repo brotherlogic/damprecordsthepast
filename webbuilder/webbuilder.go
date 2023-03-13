@@ -29,7 +29,7 @@ func BuildMatchPage(users []*pb.User, matcher *pb.Matcher) error {
 	MatchPage := &MatchPage{MatchTitle: matcher.GetName(), Matches: make([]*Match, 0)}
 	for _, user := range users {
 		match, _ := core.ComputeMatch(user, matcher)
-		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: int32(match)})
+		MatchPage.Matches = append(MatchPage.Matches, &Match{Username: user.GetName(), Percentage: int32(match), Shortname: matcher.GetSimpleName()})
 	}
 
 	template, err := template.ParseFiles("templates/complete.tmpl")
