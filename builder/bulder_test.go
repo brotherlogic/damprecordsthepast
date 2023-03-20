@@ -64,6 +64,7 @@ func TestGetReleases(t *testing.T) {
 	}
 
 	foundNIN := false
+	foundDragnet := false
 	for _, release := range releases {
 		if release.Id == 5241 {
 			foundNIN = true
@@ -72,9 +73,22 @@ func TestGetReleases(t *testing.T) {
 		if release.Id == 530182 && release.Title != "The Less You Look, The More You Find" {
 			t.Errorf("Bad Release Title: %+v", release)
 		}
+
+		if release.Id == 371281 {
+			foundDragnet = true
+			if len(release.Tracks) != 11 {
+				t.Errorf("Tracks not found: %+v", release)
+			} else if release.Tracks[0].Title != "Psykick Dancehall" {
+				t.Errorf("Wrong track title: %+v", release)
+			}
+		}
 	}
 
 	if foundNIN {
 		t.Errorf("We've found Nine Inch Nails in the mix")
+	}
+
+	if !foundDragnet {
+		t.Errorf("We did not find Dragnet")
 	}
 }
