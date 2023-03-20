@@ -3,7 +3,6 @@ package builder
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 	"strings"
 	"testing"
 )
@@ -26,11 +25,23 @@ func clean(s string) string {
 }
 
 func (t *testRetriever) get(url string) ([]byte, error) {
-	log.Printf("Getting %v", url)
 	filename := fmt.Sprintf("test/%v", clean(url))
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {
 		if strings.Contains(url, "master") {
+			fmt.Printf("curl -s \"%v\" -o \"%v\"\nsleep 10\n", url, clean(url))
+			str := `{"pagination": {
+				"per_page": 50,
+				"items": 4,
+				"page": 1,
+				"urls": {},
+				"pages": 1
+			  }
+			  }`
+			return []byte(str), nil
+		}
+
+		if strings.Contains(url, "release") {
 			fmt.Printf("curl -s \"%v\" -o \"%v\"\nsleep 10\n", url, clean(url))
 			str := `{"pagination": {
 				"per_page": 50,

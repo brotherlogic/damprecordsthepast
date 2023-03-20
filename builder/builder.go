@@ -61,11 +61,11 @@ func (b *Bridge) getSubReleases(artist int32) ([]*drtppb.Release, error) {
 
 	var pr []*drtppb.Release
 	for _, release := range releases {
-		pr = append(pr,
-			&drtppb.Release{
-				Id:    int32(release.Id),
-				Title: release.Title,
-			})
+		rr, err := b.pullRelease(int32(release.Id))
+		if err != nil {
+			return nil, err
+		}
+		pr = append(pr, rr)
 	}
 	for pageNumber := 2; pageNumber <= pagination.Pages; pageNumber++ {
 		releases, _, err := b.pullSubReleases(artist, pageNumber)
@@ -74,11 +74,11 @@ func (b *Bridge) getSubReleases(artist int32) ([]*drtppb.Release, error) {
 		}
 
 		for _, release := range releases {
-			pr = append(pr,
-				&drtppb.Release{
-					Id:    int32(release.Id),
-					Title: release.Title,
-				})
+			rr, err := b.pullRelease(int32(release.Id))
+			if err != nil {
+				return nil, err
+			}
+			pr = append(pr, rr)
 		}
 	}
 
@@ -100,11 +100,11 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 			}
 			pr = append(pr, subreleases...)
 		} else {
-			pr = append(pr,
-				&drtppb.Release{
-					Id:    int32(release.Id),
-					Title: release.Title,
-				})
+			rr, err := b.pullRelease(int32(release.Id))
+			if err != nil {
+				return nil, err
+			}
+			pr = append(pr, rr)
 		}
 	}
 
@@ -122,11 +122,11 @@ func (b *Bridge) GetReleases(artist int32) ([]*drtppb.Release, error) {
 				}
 				pr = append(pr, subreleases...)
 			} else {
-				pr = append(pr,
-					&drtppb.Release{
-						Id:    int32(release.Id),
-						Title: release.Title,
-					})
+				rr, err := b.pullRelease(int32(release.Id))
+				if err != nil {
+					return nil, err
+				}
+				pr = append(pr, rr)
 			}
 		}
 	}
@@ -151,9 +151,16 @@ type Pagination struct {
 }
 
 type ReleasePageData struct {
-	Id          int
+	Id          int `json:"id"`
 	MainRelease int `json:"main_release"`
 	Title       string
+	Tracklist   []Track
+}
+
+type Track struct {
+	Position string
+	Title    string
+	Type     string
 }
 
 func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
@@ -171,6 +178,32 @@ func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData,
 	}
 
 	return ret.Releases, ret.Pagination, nil
+}
+
+func (b *Bridge) pullRelease(release int32) (*drtppb.Release, error) {
+	url := fmt.Sprintf("%vreleases/%v", urlBase, release)
+
+	res, err := b.r.get(url)
+	if err != nil {
+		return nil, err
+	}
+
+	ret := &ReleasePageData{}
+	err = json.Unmarshal(res, ret)
+	if err != nil {
+		return nil, err
+	}
+
+	rel := &drtppb.Release{
+		Id:    int32(ret.Id),
+		Title: ret.Title,
+	}
+
+	for _, track := range ret.Tracklist {
+		rel.Tracks = append(rel.Tracks, &drtppb.Track{Title: track.Title})
+	}
+
+	return rel, nil
 }
 
 func (b *Bridge) pullSubReleases(release int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {

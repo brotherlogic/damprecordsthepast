@@ -7,6 +7,11 @@ option go_package = "github.com/brotherlogic/damp/proto";
 message Release {
     int32 id = 1;
     string title = 2;
+    repeated Track tracks = 3;
+}
+
+message Track {
+    string title = 3;
 }
 
 message Matcher {
