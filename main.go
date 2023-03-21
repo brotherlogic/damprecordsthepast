@@ -14,6 +14,16 @@ import (
 	"github.com/brotherlogic/damprecordsthepast/webbuilder"
 )
 
+func hasArtist(artists []*pb.Artist, num int32) bool {
+	for _, artist := range artists {
+		if artist.Id == num {
+			return true
+		}
+	}
+
+	return false
+}
+
 func main() {
 	switch os.Args[1] {
 	case "sync":
@@ -127,12 +137,14 @@ func main() {
 		tracker := make(map[string][]*pb.Release)
 		for _, release := range releases {
 			for _, track := range release.GetTracks() {
-				_, ok := tracker[track.GetTitle()]
-				if !ok {
-					tracker[track.GetTitle()] = make([]*pb.Release, 0)
-				}
+				if len(track.GetArtists()) == 0 || hasArtist(track.GetArtists(), 2228) {
+					_, ok := tracker[track.GetTitle()]
+					if !ok {
+						tracker[track.GetTitle()] = make([]*pb.Release, 0)
+					}
 
-				tracker[track.GetTitle()] = append(tracker[track.GetTitle()], release)
+					tracker[track.GetTitle()] = append(tracker[track.GetTitle()], release)
+				}
 			}
 		}
 

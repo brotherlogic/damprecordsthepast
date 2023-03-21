@@ -12,6 +12,11 @@ message Release {
 
 message Track {
     string title = 3;
+    repeated Artist artists = 4;
+}
+
+message Artist {
+    int32 id = 1;
 }
 
 message Matcher {

@@ -161,6 +161,11 @@ type Track struct {
 	Position string
 	Title    string
 	Type     string
+	Artists  []Artist
+}
+
+type Artist struct {
+	Id int `json:"id"`
 }
 
 func (b *Bridge) pullReleases(artist int32, pageNumber int) ([]*ReleasePageData, *Pagination, error) {
@@ -200,7 +205,11 @@ func (b *Bridge) pullRelease(release int32) (*drtppb.Release, error) {
 	}
 
 	for _, track := range ret.Tracklist {
-		rel.Tracks = append(rel.Tracks, &drtppb.Track{Title: track.Title})
+		artists := []*drtppb.Artist{}
+		for _, artist := range track.Artists {
+			artists = append(artists, &drtppb.Artist{Id: int32(artist.Id)})
+		}
+		rel.Tracks = append(rel.Tracks, &drtppb.Track{Title: track.Title, Artists: artists})
 	}
 
 	return rel, nil
