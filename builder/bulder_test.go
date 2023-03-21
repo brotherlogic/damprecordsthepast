@@ -76,6 +76,7 @@ func TestGetReleases(t *testing.T) {
 
 	foundNIN := false
 	foundDragnet := false
+	foundComp := false
 	for _, release := range releases {
 		if release.Id == 5241 {
 			foundNIN = true
@@ -91,6 +92,24 @@ func TestGetReleases(t *testing.T) {
 				t.Errorf("Tracks not found: %+v", release)
 			} else if release.Tracks[0].Title != "Psykick Dancehall" {
 				t.Errorf("Wrong track title: %+v", release)
+			} else if len(release.Tracks[0].Artists) > 0 {
+				t.Errorf("Dragnet has artists: %v", release.Tracks[0])
+			}
+		}
+
+		if release.Id == 25666801 {
+			foundComp = true
+			foundFall := false
+			for _, track := range release.Tracks {
+				for _, artist := range track.GetArtists() {
+					if artist.Id == 2228 {
+						foundFall = true
+					}
+				}
+			}
+
+			if !foundFall {
+				t.Errorf("Did not find the fall artist")
 			}
 		}
 	}
@@ -101,5 +120,9 @@ func TestGetReleases(t *testing.T) {
 
 	if !foundDragnet {
 		t.Errorf("We did not find Dragnet")
+	}
+
+	if !foundComp {
+		t.Errorf("Could not find the Comp")
 	}
 }
