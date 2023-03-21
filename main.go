@@ -111,6 +111,39 @@ func main() {
 		remote := remote.Connect()
 		err = remote.WriteMatcher(ctx, core.Marshalmatcher(match))
 		fmt.Printf("Stored: %v\n", err)
+	case "store_full_tracks":
+		bridge := builder.GetBridge()
+		releases, err := bridge.GetReleases(2228) // Working on Swell Maps
+		if err != nil {
+			log.Fatalf("Unable to get releases: %v", err)
+		}
+		log.Printf("Got %v releases", len(releases))
+
+		match := &pb.Matcher{
+			Name:       "All Tracks",
+			SimpleName: "tracks",
+		}
+
+		tracker := make(map[string][]*pb.Release)
+		for _, release := range releases {
+			for _, track := range release.GetTracks() {
+				_, ok := tracker[track.GetTitle()]
+				if !ok {
+					tracker[track.GetTitle()] = make([]*pb.Release, 0)
+				}
+
+				tracker[track.GetTitle()] = append(tracker[track.GetTitle()], release)
+			}
+		}
+
+		for _, releases := range tracker {
+			match.Matches = append(match.Matches, &pb.Match{Release: releases})
+		}
+
+		ctx := context.Background()
+		remote := remote.Connect()
+		err = remote.WriteMatcher(ctx, core.Marshalmatcher(match))
+		fmt.Printf("Stored: %v\n", err)
 	default:
 		fmt.Printf("Unknown command: %v\n", os.Args[1])
 	}
